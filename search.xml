@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>2018年句子摘抄（2024年补录）</title>
+    <url>/2024/11/30/2018%E5%B9%B4%E5%8F%A5%E5%AD%90%E6%91%98%E6%8A%84%EF%BC%882024%E5%B9%B4%E8%A1%A5%E5%BD%95%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="2018"><a href="#2018" class="headerlink" title="2018"></a><center>2018</center></h1><p>本文长期更新</p>
+<p>心空无一物才会寂寞，人无所相信才会痛苦。</p>
+<span id="more"></span>
+
+<p>山有木兮木有枝，心悦君兮君不知。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeSpring/picgo@master/IMG_20241015_231402.jpg"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>关于Typora上传图片没有权限的解决方法</title>
+    <url>/2024/11/28/Typora/</url>
+    <content><![CDATA[<p>在Hexo\source_posts下对.md文件进行插入文件的时候提示</p>
+<span id="more"></span>
+
+<p><img src="https://cdn.jsdelivr.net/gh/HeSpring/picgo@master/Snipaste_2024-11-28_21-36-44.png"></p>
+<p>这是由于Typore缺少管理员权限导致的，只需要找到Typora.exe文件，右键选择属性，选择兼容性，勾选以管理员权限启动，然后确认就可以了。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>fiest-blog</title>
+    <url>/2024/11/28/fiest-blog/</url>
+    <content><![CDATA[<h1 id="凤求凰"><a href="#凤求凰" class="headerlink" title="凤求凰"></a><center>凤求凰</center></h1><center>有一美人兮，见之不忘。一日不见兮，思之如狂。</center>
+<center>凤飞翱翔兮，四海求凰。无奈佳人兮，不在东墙。</center>
+<center>将琴代语兮，聊写衷肠。何时见许兮，慰我彷徨。</center>
+<center>愿言配德兮，携手相将。不得於飞兮，使我沦亡。</center>
+
+<span id="more"></span>
+
+<p><img src="https://cdn.jsdelivr.net/gh/HeSpring/picgo@master/1684125093302.jpeg"></p>
+<center>凤兮凤兮归故乡，遨游四海求其凰。</center>
+<center>时未遇兮无所将，何悟今兮升斯堂！</center>
+<center>有艳淑女在闺房，室迩人遐毒我肠。</center>
+<center>何缘交颈为鸳鸯，胡颉颃兮共翱翔！</center>
+<center>凰兮凰兮从我栖，得托孳尾永为妃。</center>
+<center>交情通意心和谐，中夜相从知者谁？</center>
+<center>双翼俱起翻高飞，无感我思使余悲。</center>
+
+<p><img src="https://cdn.jsdelivr.net/gh/HeSpring/picgo@master/IMG_20240507_103524.jpg"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/11/27/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
