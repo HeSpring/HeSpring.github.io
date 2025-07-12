@@ -1241,7 +1241,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff08d5;
+    background: #e7ffab;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2491,7 +2491,7 @@ mark.search-keyword {
 }
 header.header {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 @media (max-width: 991px) {
@@ -2528,7 +2528,7 @@ header.header {
   }
 }
 .main-inner {
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-sizing: border-box;
   width: calc(100% - 252px);
 }
@@ -2663,7 +2663,7 @@ header.header {
   }
   .sidebar-inner {
     background: var(--content-bg-color);
-    border-radius: initial;
+    border-radius: 20px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
     color: var(--text-color);
@@ -2724,11 +2724,11 @@ header.header {
 .main-inner .comment-position .comments,
 .main-inner .pagination {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 .main-inner .post-block:not(:first-child):not(:first-child) {
-  border-radius: initial;
+  border-radius: 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }
@@ -2746,7 +2746,7 @@ header.header {
 .main-inner > .comments,
 .main-inner .comment-position .comments,
 .main-inner .pagination {
-  border-radius: initial;
+  border-radius: 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }
@@ -2821,18 +2821,104 @@ body {
   background-position: center center;
 }
 /* ========== 页面主要模块透明化 ========== */
-.post-block {
-  opacity: 0.5;
+.header {
+  background: rgba(255,255,255,0.3) !important;
+}
+.header .header-inner {
+  background-color: #fff !important;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+.content-wrap {
+  background-color: #fff !important;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
 }
 .sidebar {
-  background-color: transparent;
-  opacity: 0.9;
+  background-color: rgba(255,255,255,0.3) !important;
+  border-radius: 20px;
+  box-shadow: transparent !important;
+  transition: transparent !important;
 }
-.header-inner {
-  background: rgba(255,255,255,0.9);
+.sidebar .sidebar-inner {
+  background: transparent !important;
 }
 .popup {
-  opacity: 0.9;
+  opacity: 0.7;
+}
+.post-block {
+  background-color: rgba(255,255,255,0.5) !important;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+.highlight {
+  background-color: transparent !important;
+  border: transparent !important;
+  border-radius: 20px;
+  padding: 0;
+}
+.highlight .highlight .code pre {
+  background: transparent !important; /* 真正的透明背景 */
+  border: transparent !important; /* 透明边框 */
+  padding: 10px;
+  border-radius: 4px;
+}
+.highlight .highlight .code pre .gutter {
+  background: rgba(0,0,0,0.03) !important;
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+.highlight .highlight .code pre .gutter pre {
+  background: transparent !important;
+}
+.highlight .highlight .code pre .code {
+  background: transparent !important;
+}
+.highlight .highlight .code pre .code pre {
+  background: transparent !important;
+  padding: 20px;
+}
+.post-body img {
+  background-color: #fff !important;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.footer {
+  background: transparent !important;
+}
+.footer .footer-inner {
+  background-color: rgba(255,255,255,0.5) !important;
+  border-radius: 8px;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+}
+[data-theme="dark"] .content-wrap,
+[data-theme="dark"] .sidebar,
+[data-theme="dark"] .header-inner,
+[data-theme="dark"] .post-block,
+[data-theme="dark"] .footer-inner {
+  background-color: rgba(0,0,0,0.6) !important;
+}
+[data-theme="dark"] .highlight {
+  border-color: rgba(255,255,255,0.1);
+}
+[data-theme="dark"] .highlight .gutter {
+  background: rgba(255,255,255,0.03) !important;
+  border-right-color: rgba(255,255,255,0.1);
+}
+.menu .menu-item a {
+  background: transparent !important;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.menu .menu-item a:hover {
+  background: rgba(0,0,0,0.05) !important;
 }
 /* ========== 返回顶部按钮 ========== */
 .back-to-top {
@@ -2890,26 +2976,41 @@ figure.highlight:hover .copy-btn {
   opacity: 1; /* 鼠标悬停代码块时显示 */
 }
 .copy-btn:hover {
-  color: #ff4c4c; /* 鼠标悬停按钮时变红 */
+  color: #3ef75a; /* 鼠标悬停按钮时变红 */
 }
-/* 代码块背景 */
-figure.highlight table,
-figure.highlight th,
-figure.highlight td {
-/* 代码块 */
-  background: transparent !important; /* 透明背景 */
+/* 给菜单图标加颜色，二次元风格糖果色 */
+.menu a i {
+  margin-right: 6px;
 }
-figure.highlight {
-/* 代码块 */
-  position: relative; /* 相对定位 */
-  overflow: auto; /* 自动滚动 */
-  box-shadow: rgba(0,0,0,0) 0px 10px 30px 0px; /* 阴影 */
-  padding-top: 30px; /* 顶部留白 */
-  border-radius: 5px; /* 圆角 */
-  line-height: 1.6;
-  margin: 0 auto 20px;
-  background: transparent !important; /* 透明背景 */
-  color: var(--highlight-foreground);
+.menu li:nth-child(1) a i {
+  color: #f78fb3;
+}
+.menu li:nth-child(2) a i {
+  color: #ffb6c1;
+}
+.menu li:nth-child(3) a i {
+  color: #7ed6df;
+}
+.menu li:nth-child(4) a i {
+  color: #caa6ff;
+}
+.menu li:nth-child(5) a i {
+  color: #f9ca24;
+}
+.menu li:nth-child(6) a i {
+  color: #70a1ff;
+}
+.menu li:nth-child(7) a i {
+  color: #b8e994;
+}
+.menu li:nth-child(8) a i {
+  color: #ff6b81;
+}
+.menu li:nth-child(9) a i {
+  color: #ffbe76;
+}
+.menu li:nth-child(10) a i {
+  color: #a29bfe;
 }
 @keyframes breathing {
   0% {
