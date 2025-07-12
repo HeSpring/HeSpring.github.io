@@ -1241,7 +1241,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #675cc3;
+    background: #ff08d5;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2822,10 +2822,17 @@ body {
 }
 /* ========== 页面主要模块透明化 ========== */
 .post-block {
-  background: rgba(255,255,255,0.5) none repeat scroll !important;
+  opacity: 0.5;
+}
+.sidebar {
+  background-color: transparent;
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
 }
 .popup {
-  background: rgba(255,255,255,0.7) none repeat scroll !important;
+  opacity: 0.9;
 }
 /* ========== 返回顶部按钮 ========== */
 .back-to-top {
@@ -2889,43 +2896,20 @@ figure.highlight:hover .copy-btn {
 figure.highlight table,
 figure.highlight th,
 figure.highlight td {
-  background: transparent !important;
+/* 代码块 */
+  background: transparent !important; /* 透明背景 */
 }
 figure.highlight {
-  position: relative;
-  overflow: auto;
-  box-shadow: rgba(0,0,0,0.4) 0px 10px 30px 0px;
-  padding-top: 30px;
-  border-radius: 5px;
+/* 代码块 */
+  position: relative; /* 相对定位 */
+  overflow: auto; /* 自动滚动 */
+  box-shadow: rgba(0,0,0,0) 0px 10px 30px 0px; /* 阴影 */
+  padding-top: 30px; /* 顶部留白 */
+  border-radius: 5px; /* 圆角 */
   line-height: 1.6;
   margin: 0 auto 20px;
   background: transparent !important; /* 透明背景 */
   color: var(--highlight-foreground);
-}
-/* 代码块整体背景 */
-figure.highlight {
-  background: transparent !important;
-  box-shadow: rgba(0,0,0,0.4) 0px 10px 30px 0px;
-  padding-top: 30px;
-  border-radius: 5px;
-  line-height: 1.6;
-  margin: 0 auto 20px;
-}
-/* 代码块内部的 <pre> 和 <code> 标签 */
-figure.highlight pre {
-  background: transparent !important;
-  padding: 10px;
-  border-radius: 5px;
-}
-figure.highlight code {
-  background: transparent !important;
-  color: var(--highlight-foreground);
-}
-/* 表格样式（如果代码块是表格形式） */
-figure.highlight table,
-figure.highlight th,
-figure.highlight td {
-  background: transparent !important;
 }
 @keyframes breathing {
   0% {
