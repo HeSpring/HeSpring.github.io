@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/web-app-manifest-192x192.png">
+  <link rel="mask-icon" href="/images/logo-algolia-nebula-blue-full.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-loading-bar.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hespring.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"vs","dark":"vs"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="前言 博主用的是Next主题中的Gemini样式，因为不懂代码，所以很多我也不懂，功能都是一个一个实现的，有些重复了，有些可能没啥用，就显得很多，不过这也是学习的一部分，随着日后学习经验的积累，也许会做一些优化。 话不多说，开始。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Next主题的页面透明化设置">
+<meta property="og:url" content="https://hespring.cn/2025/07/13/Hexo-Next%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="一椿一桓">
+<meta property="og:description" content="前言 博主用的是Next主题中的Gemini样式，因为不懂代码，所以很多我也不懂，功能都是一个一个实现的，有些重复了，有些可能没啥用，就显得很多，不过这也是学习的一部分，随着日后学习经验的积累，也许会做一些优化。 话不多说，开始。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713163047264.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713164531895.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713171209672.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713171347380.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713172431624.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HeSpring/picgo/main/hexo%E6%8F%92%E5%9B%BE-%E9%98%85%E8%AF%BB%E6%8C%89%E9%92%AE%E9%80%8F%E6%98%8E-20250713172804892.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HeSpring/picgo/main/hexo%E6%8F%92%E5%9B%BE-%E7%AB%99%E5%90%8D%E8%83%8C%E6%99%AF-20250713174254943.png">
+<meta property="article:published_time" content="2025-07-13T07:13:07.000Z">
+<meta property="article:modified_time" content="2025-07-13T09:46:22.626Z">
+<meta property="article:author" content="Hespring">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713163047264.png">
+
+
+<link rel="canonical" href="https://hespring.cn/2025/07/13/Hexo-Next%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hespring.cn/2025/07/13/Hexo-Next%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/","path":"2025/07/13/Hexo-Next主题的页面透明化设置/","title":"Hexo+Next主题的页面透明化设置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo+Next主题的页面透明化设置 | 一椿一桓</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"fHSXlu2ZcWCy10F8f79CVWdf-gzGzoHsz","app_key":"QMAm3TDKEUweFvFkXmOVC6KD","server_url":"https://fhsxlu2z.lc-cn-n1-shared.com","security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">一椿一桓</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我的皮囊不好看，我的灵魂很无趣。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-宅基地"><a href="/" rel="section"><i class="fa solid fa-house-chimney fa-fw"></i>宅基地</a></li><li class="menu-item menu-item-关于我"><a href="/about/" rel="section"><i class="fa solid fa-cat fa-fw"></i>关于我</a></li><li class="menu-item menu-item-魔法签"><a href="/tags/" rel="section"><i class="fa solid fa-wand-magic-sparkles fa-fw"></i>魔法签</a></li><li class="menu-item menu-item-资料库"><a href="/categories/" rel="section"><i class="fa solid fa-boxes-stacked fa-fw"></i>资料库</a></li><li class="menu-item menu-item-时光录"><a href="/archives/" rel="section"><i class="fa solid fa-clock-rotate-left fa-fw"></i>时光录</a></li><li class="menu-item menu-item-影画册"><a href="/photo/" rel="section"><i class="fa solid fa-camera-retro fa-fw"></i>影画册</a></li><li class="menu-item menu-item-轻图书"><a href="/books/" rel="section"><i class="fa solid fa-book-open-reader fa-fw"></i>轻图书</a></li><li class="menu-item menu-item-留言板"><a href="/message/" rel="section"><i class="fa solid fa-comment-dots fa-fw"></i>留言板</a></li><li class="menu-item menu-item-友链喵"><a href="/links/" rel="section"><i class="fa solid fa-link fa-fw"></i>友链喵</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">一、背景图片设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">页面透明化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E6%A0%8F%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">1.2.1.</span> <span class="nav-text">菜单栏背景透明化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">1.2.2.</span> <span class="nav-text">侧边栏背景透明化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%A1%86%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">1.2.3.</span> <span class="nav-text">搜索框透明化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%A1%86%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">1.2.4.</span> <span class="nav-text">文章框透明化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">1.2.5.</span> <span class="nav-text">代码块透明化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%E6%8C%89%E9%92%AE%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">1.2.6.</span> <span class="nav-text">阅读全文按钮透明化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%B5%E8%84%9A%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">1.2.7.</span> <span class="nav-text">页脚透明化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AB%99%E5%90%8D%E6%A1%86%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">1.2.8.</span> <span class="nav-text">站名框透明化</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hespring"
+      src="/images/dg-4.png">
+  <p class="site-author-name" itemprop="name">Hespring</p>
+  <div class="site-description" itemprop="description">一个闲得无聊的农村人，不喜欢编程，喜欢折腾。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Hespring" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Hespring" rel="noopener me" target="_blank"><i class="fa-brands fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hespring.cn/2025/07/13/Hexo-Next%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dg-4.png">
+      <meta itemprop="name" content="Hespring">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一椿一桓">
+      <meta itemprop="description" content="一个闲得无聊的农村人，不喜欢编程，喜欢折腾。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Hexo+Next主题的页面透明化设置 | 一椿一桓">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo+Next主题的页面透明化设置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-07-13 15:13:07" itemprop="dateCreated datePublished" datetime="2025-07-13T15:13:07+08:00">2025-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-13 17:46:22" itemprop="dateModified" datetime="2025-07-13T17:46:22+08:00">2025-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2025/07/13/Hexo-Next%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo+Next主题的页面透明化设置" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="前言">前言</h2>
+<p>博主用的是Next主题中的Gemini样式，因为不懂代码，所以很多我也不懂，功能都是一个一个实现的，有些重复了，有些可能没啥用，就显得很多，不过这也是学习的一部分，随着日后学习经验的积累，也许会做一些优化。<br>
+话不多说，开始。</p>
+<span id="more"></span>
+<h3 id="一、背景图片设置">一、背景图片设置</h3>
+<p>首先在这个目录下<code>hexo-blog\source\_data</code>下新建文一个.txt的文本文件，重命名为<code>styles.styl</code>文件，改后缀的时候会有提示，选择是。</p>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713163047264.png" alt="image-20250713163047264"><center></p>
+<p>打开<code>styles.styl</code>文件，我用的是VS Code，其他的编程软件也可以，有什么用什么。打开后把下面的代码复制进去：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ========== 博客背景图设置 ========== */</span></span><br><span class="line"><span class="comment">//背景图片设置，背景图片路径hexo-blog\themes\next\source\images</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(/images/背景图.jpg);    </span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;      <span class="comment">// 不重复</span></span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;     <span class="comment">// 固定</span></span><br><span class="line">    <span class="comment">/* cover：保持比例，铺满且不变形，但允许裁剪部分图片。contain：保持比例，完整显示,但两边有时候会有空白*/</span></span><br><span class="line">	<span class="attribute">background-size</span>: cover;  <span class="comment">/* 这里可以选择用 “100% 100%” 这个写法，但会导致图片拉伸。 */</span>   </span><br><span class="line">    <span class="attribute">background-position</span>: center center;     <span class="comment">// 居中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="页面透明化">页面透明化</h3>
+<h4 id="菜单栏背景透明化">菜单栏背景透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ========== 页面主要模块透明化 ========== */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 菜单栏透明</span></span><br><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.5</span>) <span class="meta">!important</span>;    <span class="comment">// 背景颜色透明度</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713164531895.png" alt="image-20250713164531895"></p>
+<h4 id="侧边栏背景透明化">侧边栏背景透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 侧边栏透明</span></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.5</span>) <span class="meta">!important</span>;     <span class="comment">// 背景颜色透明度</span></span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">20px</span>;                     <span class="comment">// 圆角</span></span><br><span class="line">  <span class="attribute">box-shadow</span>: transparent <span class="meta">!important</span>;       <span class="comment">// 阴影</span></span><br><span class="line">  <span class="attribute">transition</span>: transparent <span class="meta">!important</span>;      <span class="comment">// 过渡效果</span></span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.sidebar-inner</span> &#123;         <span class="comment">// 侧边栏内容</span></span><br><span class="line">    <span class="attribute">background</span>: transparent <span class="meta">!important</span>;        <span class="comment">// 背景透明</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713171209672.png" alt="image-20250713171209672"></p>
+<h4 id="搜索框透明化">搜索框透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 搜索框的透明度设置</span></span><br><span class="line"><span class="selector-class">.popup</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.7</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713171347380.png" alt="image-20250713171347380"></p>
+<h4 id="文章框透明化">文章框透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文章卡片透明</span></span><br><span class="line"><span class="selector-class">.post-block</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.5</span>) <span class="meta">!important</span>;       <span class="comment">// 背景颜色透明度    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码块透明化">代码块透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码块背景颜色</span></span><br><span class="line"><span class="selector-tag">code</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">figure</span><span class="selector-class">.highlight</span>, pre    </span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>) <span class="meta">!important</span>;  <span class="comment">// 背景颜色透明度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码区域背景颜色</span></span><br><span class="line"><span class="selector-tag">tbody</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-of-type</span>(odd)</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">249</span>, <span class="number">249</span>, <span class="number">249</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码块行号背景颜色</span></span><br><span class="line"><span class="selector-tag">figure</span><span class="selector-class">.highlight</span> <span class="selector-class">.gutter</span> pre</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ffc7c7</span> <span class="meta">!important</span>;  <span class="comment">// 背景颜色透明度</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#191919</span></span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">10px</span>     <span class="comment">/* 左边距 */</span></span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">10px</span>   <span class="comment">/* 右边距 */</span></span><br><span class="line">  <span class="attribute">text-align</span>: right      <span class="comment">/* 右对齐 */</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713172431624.png" alt="image-20250713172431624"></p>
+<h4 id="阅读全文按钮透明化">阅读全文按钮透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 阅读全文按钮</span></span><br><span class="line"><span class="selector-class">.btn</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000000ff</span> <span class="meta">!important</span>;  <span class="comment">// 字体颜色</span></span><br><span class="line">  <span class="attribute">display</span>: inline-block       <span class="comment">/* 块级元素 */</span></span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0.875em</span>        <span class="comment">/* 字体大小 */</span></span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">2</span>            <span class="comment">/* 行高 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f5cbcb3b</span> <span class="meta">!important</span>;  <span class="comment">// 背景颜色透明度</span></span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#84848473</span> <span class="meta">!important</span>;  <span class="comment">// 边框颜色透明度</span></span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>        <span class="comment">/* 圆角 */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0px</span> <span class="number">20px</span>         <span class="comment">/* 内边距 */</span></span><br><span class="line">  <span class="attribute">transition</span>: background-color <span class="number">0.2s</span> ease-in-out;  <span class="comment">// 过渡效果</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/hexo%E6%8F%92%E5%9B%BE-%E9%98%85%E8%AF%BB%E6%8C%89%E9%92%AE%E9%80%8F%E6%98%8E-20250713172804892.png" alt="image-20250713172804892"></p>
+<h4 id="页脚透明化">页脚透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 页脚透明</span></span><br><span class="line"><span class="selector-class">.footer</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.footer-inner</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>) <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.3s</span> ease;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="站名框透明化">站名框透明化</h4>
+<p>打开<code>hexo-blog\themes\next\source\css\_schemes\Pisces</code>路径下的·<code>_header.styl</code>文件，找个位置添加下列代码：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 渐变背景</span></span><br><span class="line"><span class="selector-class">.site-brand-container</span><span class="selector-pseudo">::before</span> &#123;     </span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;     <span class="comment">// 绝对定位</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>;      <span class="comment">// 全屏覆盖</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(-<span class="number">225deg</span>, <span class="number">#FFB6C1</span>, <span class="number">#DDA0DD</span>, <span class="number">#87CEFA</span>);     <span class="comment">// 线性渐变</span></span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.7</span>;       <span class="comment">// 透明度</span></span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;         <span class="comment">// 层级</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/hexo%E6%8F%92%E5%9B%BE-%E7%AB%99%E5%90%8D%E8%83%8C%E6%99%AF-20250713174254943.png" alt="image-20250713174254943"></p>
+<p>以上就是全部区块的透明化代码。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Hespring 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Hespring 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"><i class="fa-solid fa-wand-magic-sparkles"></i> 技术</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/07/12/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-angle-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Hespring</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">16k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">54 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
