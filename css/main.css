@@ -1241,7 +1241,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff6338;
+    background: #5ec11f;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2878,6 +2878,29 @@ figure.highlight .gutter pre {
   padding: 0px 20px /* 内边距 */;
   transition: background-color 0.2s ease-in-out;
 }
+.btn:hover {
+  transform: scale(1.05);
+  background: rgba(245,203,203,0.502) !important;
+}
+.btn:active {
+  transform: scale(0.95);
+  background: rgba(245,203,203,0.8) !important;
+}
+.menu-item a {
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+  padding: 5px 10px;
+  background: transparent;
+}
+.menu-item a:hover {
+  transform: scale(1.08);
+  background: rgba(255,235,238,0.3);
+}
+.menu-item a:active {
+  transform: scale(0.95);
+  background: rgba(255,200,200,0.4);
+}
 .post-body img {
   padding: 5px; /* 内边距 */
   border-radius: 4px; /* 圆角 */
@@ -3018,6 +3041,49 @@ figure.highlight:hover .copy-btn {
 .site-state-item-name {
   color: #333; /* 更深一点的灰色，更易读 */
   font-size: 0.8125em;
+}
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.book-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.book-card:hover {
+  transform: scale(1.03);
+}
+.book-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.book-info {
+  padding: 10px;
+}
+.book-info h3 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.buttons .btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 6px 12px;
+  background: #0078d7;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+.buttons .btn:hover {
+  background: #005bb5;
 }
 @keyframes breathing {
   0% {
