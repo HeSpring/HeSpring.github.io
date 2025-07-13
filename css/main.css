@@ -1241,7 +1241,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #5ec11f;
+    background: #ffffd6;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1502,28 +1502,6 @@ pre code {
   color: #999;
   font-size: 0.8125em;
   margin-top: 0;
-}
-.site-state {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  line-height: 1.4;
-}
-.site-state-item {
-  padding: 0 15px;
-}
-.site-state-item a {
-  border-bottom: 0;
-  display: block;
-}
-.site-state-item-count {
-  display: block;
-  font-size: 1em;
-  font-weight: 600;
-}
-.site-state-item-name {
-  color: #999;
-  font-size: 0.8125em;
 }
 .sidebar .sidebar-button:not(:first-child) {
   margin-top: 15px;
@@ -3029,6 +3007,9 @@ figure.highlight:hover .copy-btn {
 .menu li:nth-child(10) a i {
   color: #a29bfe;
 }
+.menu li:nth-child(11) a i {
+  color: #11e23e;
+}
 .site-title {
   color: #222 !important;
 }
@@ -3084,6 +3065,45 @@ figure.highlight:hover .copy-btn {
 }
 .buttons .btn:hover {
   background: #005bb5;
+}
+#app input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid rgba(204,204,204,0); /* 浅灰边框半透明 */
+  background-color: rgba(255,255,255,0); /* 半透明白色背景 */
+  color: #000; /* 保证文字不透明可读 */
+}
+#app button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background: rgba(228,142,142,0.149) !important;
+  color: #141414 !important;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+/* 添加动画过渡 */
+  transition: all 0.2s ease-in-out;
+  transform: scale(1); /* 初始大小 */
+}
+/* 悬停时：放大 + 背景加深 */
+#app button:hover {
+  transform: scale(1.05); /* 稍微放大 */
+  background: rgba(228,142,142,0.5) !important; /* 加深颜色 */
+}
+/* 点击时：缩小 */
+#app button:active {
+  transform: scale(0.95); /* 稍微缩小 */
+}
+#result {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(255,255,255,0.149) !important;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  word-break: break-all;
 }
 @keyframes breathing {
   0% {
