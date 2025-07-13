@@ -21,19 +21,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hespring.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"vs","dark":"vs"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="fetch(&quot;https:&#x2F;&#x2F;hespring.github.io&#x2F;bookshelf&#x2F;books.json&quot;)   .then(res &#x3D;&gt; res.json())   .then(data &#x3D;&gt; {     const container &#x3D; document.getElementById(&quot;book-list&quot;);     data.forEach(book &#x3D;&gt; {       con">
+    <meta name="description" content="📚 图书馆        function filterBooks() {   const input &#x3D; document.getElementById(&#39;bookSearch&#39;).value.toLowerCase();   const books &#x3D; document.querySelectorAll(&#39;.book-card&#39;);    books.forEach(book &#x3D;&gt; {">
 <meta property="og:type" content="website">
 <meta property="og:title" content="轻图书">
 <meta property="og:url" content="https://hespring.cn/books/index.html">
 <meta property="og:site_name" content="一椿一桓">
-<meta property="og:description" content="fetch(&quot;https:&#x2F;&#x2F;hespring.github.io&#x2F;bookshelf&#x2F;books.json&quot;)   .then(res &#x3D;&gt; res.json())   .then(data &#x3D;&gt; {     const container &#x3D; document.getElementById(&quot;book-list&quot;);     data.forEach(book &#x3D;&gt; {       con">
+<meta property="og:description" content="📚 图书馆        function filterBooks() {   const input &#x3D; document.getElementById(&#39;bookSearch&#39;).value.toLowerCase();   const books &#x3D; document.querySelectorAll(&#39;.book-card&#39;);    books.forEach(book &#x3D;&gt; {">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hespring.cn/books/$%7Bbook.cover%7D">
-<meta property="article:published_time" content="2025-07-13T14:42:33.337Z">
-<meta property="article:modified_time" content="2025-07-13T14:42:33.337Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/HeSpring/bookshelf/main/cuvers/date-a-live.jpg">
+<meta property="article:published_time" content="2025-07-13T17:52:06.216Z">
+<meta property="article:modified_time" content="2025-07-13T17:52:06.216Z">
 <meta property="article:author" content="Hespring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hespring.cn/books/$%7Bbook.cover%7D">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/HeSpring/bookshelf/main/cuvers/date-a-live.jpg">
 
 
 <link rel="canonical" href="https://hespring.cn/books/">
@@ -152,7 +152,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -165,6 +165,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%9A-%E5%9B%BE%E4%B9%A6%E9%A6%86"><span class="nav-number">1.</span> <span class="nav-text">📚 图书馆</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -173,7 +174,7 @@
     <img class="site-author-image" itemprop="image" alt="Hespring"
       src="/images/dg-4.png">
   <p class="site-author-name" itemprop="name">Hespring</p>
-  <div class="site-description" itemprop="description">一个闲得无聊的农村人，不喜欢编程，喜欢折腾。</div>
+  <div class="site-description" itemprop="description">一个闲得无聊的人，不喜欢编程，喜欢折腾。</div>
 </div>
   <div class="links-of-author animated">
       <span class="links-of-author-item">
@@ -214,29 +215,103 @@
       
       
       <div class="post-body">
-          <div id="book-list" class="book-grid"></div>
+          <hr>
+<h2 id="📚-图书馆">📚 图书馆</h2>
+<!-- 搜索框 -->
+<div class="book-search-container">
+  <input type="text" id="bookSearch" placeholder=" 搜索书名..." onkeyup="filterBooks()" />
+</div>
 <script>
-fetch("https://hespring.github.io/bookshelf/books.json")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("book-list");
-    data.forEach(book => {
-      const html = `
-        <div class="book-card">
-          <img src="${book.cover}" alt="${book.title}">
-          <div class="book-info">
-            <h3>${book.title}</h3>
-            <div class="buttons">
-              <a href="${book.read_url}" target="_blank" class="btn">📖 在线阅读</a>
-              <a href="${book.download_url}" target="_blank" class="btn">⬇️ 下载</a>
-            </div>
-          </div>
-        </div>
-      `;
-      container.innerHTML += html;
-    });
+function filterBooks() {
+  const input = document.getElementById('bookSearch').value.toLowerCase();
+  const books = document.querySelectorAll('.book-card');
+
+  books.forEach(book => {
+    const title = book.querySelector('.book-title').innerText.toLowerCase();
+    book.style.display = title.includes(input) ? 'flex' : 'none';
   });
+}
 </script>
+<style>
+.book-search-container {        /* 搜索框样式 */
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#bookSearch {      /* 搜索框样式 */
+  width: 200px;       /* 宽度 */
+  max-width: 90%;       /* 最大宽度 */
+  padding: 8px 14px;        /* 内边距 */
+  font-size: 1rem;
+  border: 1px solid #ccc;         /* 边框 */
+  border-radius: 20px;         /* 边框圆角 */
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+#bookSearch:focus {      /* 输入框获得焦点 */
+  box-shadow: 0 0 6px rgba(100, 100, 255, 0);         /* 边框阴影 */
+  border-color: #888;         /* 边框颜色 */
+}
+</style>
+<!-- 图书卡片 -->
+<p>以下书籍点击封面或书名可直接下载：</p>
+<div class="book-gallery">
+  <a class="book-card" href="https://raw.githubusercontent.com/HeSpring/bookshelf/main/books/%E7%BA%A6%E4%BC%9A%E5%A4%A7%E4%BD%9C%E6%88%98(DATE%20A%20LIVE)%20-%20%E6%A9%98%E5%85%AC%E5%8F%B8%20-%20UNKNOWN.epub" target="_blank">
+    <img src="https://raw.githubusercontent.com/HeSpring/bookshelf/main/cuvers/date-a-live.jpg" alt="约会大作战封面">
+    <p class="book-title">约会大作战</p>
+  </a>
+</div>
+<style>
+.book-gallery {      /* 整体样式 */
+  display: flex;     /* 启用flex布局 */
+  flex-wrap: wrap;       /* 允许换行 */
+  gap: 20px;        /* 卡片间距 */
+  margin-top: 1rem;      /* 顶部外边距 */
+  justify-content: start;      /* 主轴对齐方式 */
+}
+
+.book-card {        /* 卡片样式 */  
+  display: flex;
+  flex-direction: column;
+  width: 200px;     /* 卡片宽度 */
+  text-align: center;
+  border-radius: 12px;     /* 卡片圆角 */
+  overflow: hidden; /* 关键：让图片不被padding撑开 */
+  background: rgba(255, 255, 255, 0.3);    /* 卡片背景 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);     /* 卡片阴影 */
+  text-decoration: none;       /* 去掉下划线 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;        /* 卡片动画 */
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.book-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.book-card img {      /* 封面样式 */
+  display: 100px;      /* 图片宽度自适应 */
+  width: 180px;        /* 图片高度自适应 */
+  height: 200px;       /* 图片宽度自适应 */
+  margin: 0 auto;     /* 图片居中 */
+  border-radius: 12px 12px 0 0;     /* 图片圆角 */
+}
+
+.book-title {        /* 书名样式 */ 
+  margin: 0;
+  padding: 10px 8px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  background: rgba(248, 155, 155, 0) !important;    /* 背景色 */
+}
+</style>
 
       </div>
       
