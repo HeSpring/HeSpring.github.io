@@ -1247,7 +1247,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffe0ba;
+    background: #24ffff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3130,14 +3130,6 @@ figure.highlight:hover .copy-btn {
   border: 1px solid #ddd;
   border-radius: 5px;
   word-break: break-all;
-}
-.v[data-class=v] .vlogin-nick {
-  display: block;
-  color: #000; /* 昵称颜色 */
-  font-size: 0.75em; /* 字体大小 */
-  word-break: break-all;
-  text-align: center; /* ⬅️ 水平居中 */
-  margin-top: 0.5rem; /* ⬅️ 与头像之间的距离 */
 }
 .v[data-class=v] .vactions .v-like,
 .v[data-class=v] .vactions .v-heart {

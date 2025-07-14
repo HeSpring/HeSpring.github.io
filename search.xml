@@ -1,71 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo+Next主题的页面透明化设置</title>
-    <url>/2025/07/13/Hexo-Next%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="前言">前言</h2>
-<p>博主用的是Next主题中的Gemini样式，因为不懂代码，所以很多我也不懂，功能都是一个一个实现的，有些重复了，有些可能没啥用，就显得很多，不过这也是学习的一部分，随着日后学习经验的积累，也许会做一些优化。<br>
-话不多说，开始。</p>
-<span id="more"></span>
-<h3 id="一、背景图片设置">一、背景图片设置</h3>
-<p>首先在这个目录下<code>hexo-blog\source\_data</code>下新建文一个.txt的文本文件，重命名为<code>styles.styl</code>文件，改后缀的时候会有提示，选择是。</p>
-<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713163047264.png" alt="image-20250713163047264"><center></p>
-<p>打开<code>styles.styl</code>文件，我用的是VS Code，其他的编程软件也可以，有什么用什么。打开后把下面的代码复制进去：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* ========== 博客背景图设置 ========== */</span></span><br><span class="line"><span class="comment">//背景图片设置，背景图片路径hexo-blog\themes\next\source\images</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(/images/背景图.jpg);    </span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;      <span class="comment">// 不重复</span></span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;     <span class="comment">// 固定</span></span><br><span class="line">    <span class="comment">/* cover：保持比例，铺满且不变形，但允许裁剪部分图片。contain：保持比例，完整显示,但两边有时候会有空白*/</span></span><br><span class="line">	<span class="attribute">background-size</span>: cover;  <span class="comment">/* 这里可以选择用 “100% 100%” 这个写法，但会导致图片拉伸。 */</span>   </span><br><span class="line">    <span class="attribute">background-position</span>: center center;     <span class="comment">// 居中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="页面透明化">页面透明化</h3>
-<h4 id="菜单栏背景透明化">菜单栏背景透明化</h4>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* ========== 页面主要模块透明化 ========== */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 菜单栏透明</span></span><br><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.5</span>) <span class="meta">!important</span>;    <span class="comment">// 背景颜色透明度</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713164531895.png" alt="image-20250713164531895"></p>
-<h4 id="侧边栏背景透明化">侧边栏背景透明化</h4>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 侧边栏透明</span></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.5</span>) <span class="meta">!important</span>;     <span class="comment">// 背景颜色透明度</span></span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">20px</span>;                     <span class="comment">// 圆角</span></span><br><span class="line">  <span class="attribute">box-shadow</span>: transparent <span class="meta">!important</span>;       <span class="comment">// 阴影</span></span><br><span class="line">  <span class="attribute">transition</span>: transparent <span class="meta">!important</span>;      <span class="comment">// 过渡效果</span></span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.sidebar-inner</span> &#123;         <span class="comment">// 侧边栏内容</span></span><br><span class="line">    <span class="attribute">background</span>: transparent <span class="meta">!important</span>;        <span class="comment">// 背景透明</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713171209672.png" alt="image-20250713171209672"></p>
-<h4 id="搜索框透明化">搜索框透明化</h4>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 搜索框的透明度设置</span></span><br><span class="line"><span class="selector-class">.popup</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.7</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713171347380.png" alt="image-20250713171347380"></p>
-<h4 id="文章框透明化">文章框透明化</h4>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 文章卡片透明</span></span><br><span class="line"><span class="selector-class">.post-block</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.5</span>) <span class="meta">!important</span>;       <span class="comment">// 背景颜色透明度    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="代码块透明化">代码块透明化</h4>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 代码块背景颜色</span></span><br><span class="line"><span class="selector-tag">code</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">figure</span><span class="selector-class">.highlight</span>, pre    </span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>) <span class="meta">!important</span>;  <span class="comment">// 背景颜色透明度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码区域背景颜色</span></span><br><span class="line"><span class="selector-tag">tbody</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-of-type</span>(odd)</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">249</span>, <span class="number">249</span>, <span class="number">249</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码块行号背景颜色</span></span><br><span class="line"><span class="selector-tag">figure</span><span class="selector-class">.highlight</span> <span class="selector-class">.gutter</span> pre</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ffc7c7</span> <span class="meta">!important</span>;  <span class="comment">// 背景颜色透明度</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#191919</span></span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">10px</span>     <span class="comment">/* 左边距 */</span></span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">10px</span>   <span class="comment">/* 右边距 */</span></span><br><span class="line">  <span class="attribute">text-align</span>: right      <span class="comment">/* 右对齐 */</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713172431624.png" alt="image-20250713172431624"></p>
-<h4 id="阅读全文按钮透明化">阅读全文按钮透明化</h4>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 阅读全文按钮</span></span><br><span class="line"><span class="selector-class">.btn</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000000ff</span> <span class="meta">!important</span>;  <span class="comment">// 字体颜色</span></span><br><span class="line">  <span class="attribute">display</span>: inline-block       <span class="comment">/* 块级元素 */</span></span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0.875em</span>        <span class="comment">/* 字体大小 */</span></span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">2</span>            <span class="comment">/* 行高 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f5cbcb3b</span> <span class="meta">!important</span>;  <span class="comment">// 背景颜色透明度</span></span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#84848473</span> <span class="meta">!important</span>;  <span class="comment">// 边框颜色透明度</span></span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>        <span class="comment">/* 圆角 */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0px</span> <span class="number">20px</span>         <span class="comment">/* 内边距 */</span></span><br><span class="line">  <span class="attribute">transition</span>: background-color <span class="number">0.2s</span> ease-in-out;  <span class="comment">// 过渡效果</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/hexo%E6%8F%92%E5%9B%BE-%E9%98%85%E8%AF%BB%E6%8C%89%E9%92%AE%E9%80%8F%E6%98%8E-20250713172804892.png" alt="image-20250713172804892"></p>
-<h4 id="页脚透明化">页脚透明化</h4>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 页脚透明</span></span><br><span class="line"><span class="selector-class">.footer</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.footer-inner</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>) <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.3s</span> ease;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="站名框透明化">站名框透明化</h4>
-<p>打开<code>hexo-blog\themes\next\source\css\_schemes\Pisces</code>路径下的·<code>_header.styl</code>文件，找个位置添加下列代码：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 渐变背景</span></span><br><span class="line"><span class="selector-class">.site-brand-container</span><span class="selector-pseudo">::before</span> &#123;     </span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;     <span class="comment">// 绝对定位</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>;      <span class="comment">// 全屏覆盖</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(-<span class="number">225deg</span>, <span class="number">#FFB6C1</span>, <span class="number">#DDA0DD</span>, <span class="number">#87CEFA</span>);     <span class="comment">// 线性渐变</span></span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.7</span>;       <span class="comment">// 透明度</span></span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;         <span class="comment">// 层级</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/hexo%E6%8F%92%E5%9B%BE-%E7%AB%99%E5%90%8D%E8%83%8C%E6%99%AF-20250713174254943.png" alt="image-20250713174254943"></p>
-<p>以上就是全部区块的透明化代码。</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2025/07/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Typora常用语法大全</title>
     <url>/2025/07/12/Typora%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E5%A4%A7%E5%85%A8/</url>
     <content><![CDATA[<h2 id="一、标题（Markdown">一、标题（Markdown)</h2>
@@ -132,6 +67,51 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo+Next主题的页面透明化设置</title>
+    <url>/2025/07/13/Hexo-Next%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="前言">前言</h2>
+<p>博主用的是Next主题中的Gemini样式，因为不懂代码，所以很多我也不懂，功能都是一个一个实现的，有些重复了，有些可能没啥用，就显得很多，不过这也是学习的一部分，随着日后学习经验的积累，也许会做一些优化。<br>
+话不多说，开始。</p>
+<span id="more"></span>
+<h3 id="一、背景图片设置">一、背景图片设置</h3>
+<p>首先在这个目录下<code>hexo-blog\source\_data</code>下新建文一个.txt的文本文件，重命名为<code>styles.styl</code>文件，改后缀的时候会有提示，选择是。</p>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713163047264.png" alt="image-20250713163047264"><center></p>
+<p>打开<code>styles.styl</code>文件，我用的是VS Code，其他的编程软件也可以，有什么用什么。打开后把下面的代码复制进去：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* ========== 博客背景图设置 ========== */</span></span><br><span class="line"><span class="comment">//背景图片设置，背景图片路径hexo-blog\themes\next\source\images</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(/images/背景图.jpg);    </span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;      <span class="comment">// 不重复</span></span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;     <span class="comment">// 固定</span></span><br><span class="line">    <span class="comment">/* cover：保持比例，铺满且不变形，但允许裁剪部分图片。contain：保持比例，完整显示,但两边有时候会有空白*/</span></span><br><span class="line">	<span class="attribute">background-size</span>: cover;  <span class="comment">/* 这里可以选择用 “100% 100%” 这个写法，但会导致图片拉伸。 */</span>   </span><br><span class="line">    <span class="attribute">background-position</span>: center center;     <span class="comment">// 居中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="页面透明化">页面透明化</h3>
+<h4 id="菜单栏背景透明化">菜单栏背景透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* ========== 页面主要模块透明化 ========== */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 菜单栏透明</span></span><br><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.5</span>) <span class="meta">!important</span>;    <span class="comment">// 背景颜色透明度</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713164531895.png" alt="image-20250713164531895"></p>
+<h4 id="侧边栏背景透明化">侧边栏背景透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 侧边栏透明</span></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.5</span>) <span class="meta">!important</span>;     <span class="comment">// 背景颜色透明度</span></span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">20px</span>;                     <span class="comment">// 圆角</span></span><br><span class="line">  <span class="attribute">box-shadow</span>: transparent <span class="meta">!important</span>;       <span class="comment">// 阴影</span></span><br><span class="line">  <span class="attribute">transition</span>: transparent <span class="meta">!important</span>;      <span class="comment">// 过渡效果</span></span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.sidebar-inner</span> &#123;         <span class="comment">// 侧边栏内容</span></span><br><span class="line">    <span class="attribute">background</span>: transparent <span class="meta">!important</span>;        <span class="comment">// 背景透明</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713171209672.png" alt="image-20250713171209672"></p>
+<h4 id="搜索框透明化">搜索框透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 搜索框的透明度设置</span></span><br><span class="line"><span class="selector-class">.popup</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.7</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713171347380.png" alt="image-20250713171347380"></p>
+<h4 id="文章框透明化">文章框透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 文章卡片透明</span></span><br><span class="line"><span class="selector-class">.post-block</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.5</span>) <span class="meta">!important</span>;       <span class="comment">// 背景颜色透明度    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码块透明化">代码块透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 代码块背景颜色</span></span><br><span class="line"><span class="selector-tag">code</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">figure</span><span class="selector-class">.highlight</span>, pre    </span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>) <span class="meta">!important</span>;  <span class="comment">// 背景颜色透明度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码区域背景颜色</span></span><br><span class="line"><span class="selector-tag">tbody</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-of-type</span>(odd)</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">249</span>, <span class="number">249</span>, <span class="number">249</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 代码块行号背景颜色</span></span><br><span class="line"><span class="selector-tag">figure</span><span class="selector-class">.highlight</span> <span class="selector-class">.gutter</span> pre</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ffc7c7</span> <span class="meta">!important</span>;  <span class="comment">// 背景颜色透明度</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#191919</span></span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">10px</span>     <span class="comment">/* 左边距 */</span></span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">10px</span>   <span class="comment">/* 右边距 */</span></span><br><span class="line">  <span class="attribute">text-align</span>: right      <span class="comment">/* 右对齐 */</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/image-20250713172431624.png" alt="image-20250713172431624"></p>
+<h4 id="阅读全文按钮透明化">阅读全文按钮透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 阅读全文按钮</span></span><br><span class="line"><span class="selector-class">.btn</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000000ff</span> <span class="meta">!important</span>;  <span class="comment">// 字体颜色</span></span><br><span class="line">  <span class="attribute">display</span>: inline-block       <span class="comment">/* 块级元素 */</span></span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0.875em</span>        <span class="comment">/* 字体大小 */</span></span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">2</span>            <span class="comment">/* 行高 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f5cbcb3b</span> <span class="meta">!important</span>;  <span class="comment">// 背景颜色透明度</span></span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#84848473</span> <span class="meta">!important</span>;  <span class="comment">// 边框颜色透明度</span></span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">10px</span>        <span class="comment">/* 圆角 */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0px</span> <span class="number">20px</span>         <span class="comment">/* 内边距 */</span></span><br><span class="line">  <span class="attribute">transition</span>: background-color <span class="number">0.2s</span> ease-in-out;  <span class="comment">// 过渡效果</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/hexo%E6%8F%92%E5%9B%BE-%E9%98%85%E8%AF%BB%E6%8C%89%E9%92%AE%E9%80%8F%E6%98%8E-20250713172804892.png" alt="image-20250713172804892"></p>
+<h4 id="页脚透明化">页脚透明化</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 页脚透明</span></span><br><span class="line"><span class="selector-class">.footer</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.footer-inner</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>) <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.3s</span> ease;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="站名框透明化">站名框透明化</h4>
+<p>打开<code>hexo-blog\themes\next\source\css\_schemes\Pisces</code>路径下的·<code>_header.styl</code>文件，找个位置添加下列代码：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 渐变背景</span></span><br><span class="line"><span class="selector-class">.site-brand-container</span><span class="selector-pseudo">::before</span> &#123;     </span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;     <span class="comment">// 绝对定位</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>;      <span class="comment">// 全屏覆盖</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(-<span class="number">225deg</span>, <span class="number">#FFB6C1</span>, <span class="number">#DDA0DD</span>, <span class="number">#87CEFA</span>);     <span class="comment">// 线性渐变</span></span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.7</span>;       <span class="comment">// 透明度</span></span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;         <span class="comment">// 层级</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/HeSpring/picgo/main/hexo%E6%8F%92%E5%9B%BE-%E7%AB%99%E5%90%8D%E8%83%8C%E6%99%AF-20250713174254943.png" alt="image-20250713174254943"></p>
+<p>以上就是全部区块的透明化代码。</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《采桑子·时光只解催人老》</title>
     <url>/2025/07/11/%E3%80%8A%E9%87%87%E6%A1%91%E5%AD%90%C2%B7%E6%97%B6%E5%85%89%E5%8F%AA%E8%A7%A3%E5%82%AC%E4%BA%BA%E8%80%81%E3%80%8B/</url>
     <content><![CDATA[<center>北宋·晏殊</center>
@@ -145,6 +125,26 @@
       <tags>
         <tag>文学</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2025/07/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start">Quick Start</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>恢复博客过程的存档</title>
@@ -208,18 +208,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇回归文章</title>
-    <url>/2025/07/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%81%A2%E5%A4%8D%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>之前搞的hexo-blog没做备份，旧电脑又卖了，导致我现在没有备份，所以只能重新搭建hexo-blog。苦兮兮，就当买个教训了，以后要好好备份啊。</p>
-]]></content>
-      <categories>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>给一位文学青年的公开状</title>
     <url>/2025/07/11/%E7%BB%99%E4%B8%80%E4%BD%8D%E6%96%87%E5%AD%A6%E9%9D%92%E5%B9%B4%E7%9A%84%E5%85%AC%E5%BC%80%E7%8A%B6/</url>
     <content><![CDATA[<p>作者：郁达夫<br>
@@ -247,6 +235,18 @@
       </categories>
       <tags>
         <tag>文学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇回归文章</title>
+    <url>/2025/07/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%81%A2%E5%A4%8D%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>之前搞的hexo-blog没做备份，旧电脑又卖了，导致我现在没有备份，所以只能重新搭建hexo-blog。苦兮兮，就当买个教训了，以后要好好备份啊。</p>
+]]></content>
+      <categories>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
 </search>

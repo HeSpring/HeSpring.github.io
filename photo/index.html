@@ -21,16 +21,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hespring.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"vs","dark":"vs"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="&#x2F;* 📌 分类按钮区 *&#x2F; .gallery-filter {   display: flex;   justify-content: center;   flex-wrap: wrap;   gap: 12px;   margin: 20px 0; }  .gallery-filter button {   padding: 8px 18px;   border: none;   backg">
+    <meta name="description" content="&#x2F;* 分类按钮区 *&#x2F; .gallery-filter {   display: flex;   justify-content: center;   flex-wrap: wrap;   gap: 12px;   margin: 20px 0; } .gallery-filter button {   padding: 8px 18px;   border: none;   backgroun">
 <meta property="og:type" content="website">
 <meta property="og:title" content="影画册">
 <meta property="og:url" content="https://hespring.cn/photo/index.html">
 <meta property="og:site_name" content="一椿一桓">
-<meta property="og:description" content="&#x2F;* 📌 分类按钮区 *&#x2F; .gallery-filter {   display: flex;   justify-content: center;   flex-wrap: wrap;   gap: 12px;   margin: 20px 0; }  .gallery-filter button {   padding: 8px 18px;   border: none;   backg">
+<meta property="og:description" content="&#x2F;* 分类按钮区 *&#x2F; .gallery-filter {   display: flex;   justify-content: center;   flex-wrap: wrap;   gap: 12px;   margin: 20px 0; } .gallery-filter button {   padding: 8px 18px;   border: none;   backgroun">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hespring.cn/photo/$%7Bimg.url%7D">
 <meta property="article:published_time" content="2025-07-12T12:45:00.000Z">
-<meta property="article:modified_time" content="2025-07-14T17:22:41.315Z">
+<meta property="article:modified_time" content="2025-07-14T20:39:35.524Z">
 <meta property="article:author" content="Hespring">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hespring.cn/photo/$%7Bimg.url%7D">
@@ -215,7 +215,7 @@
       
       <div class="post-body">
           <style>
-/* 📌 分类按钮区 */
+/* 分类按钮区 */
 .gallery-filter {
   display: flex;
   justify-content: center;
@@ -223,11 +223,10 @@
   gap: 12px;
   margin: 20px 0;
 }
-
 .gallery-filter button {
   padding: 8px 18px;
   border: none;
-  background-color: rgba(255, 182, 193, 0.6); /* 半透明粉色 */
+  background-color: rgba(255, 182, 193, 0.6);
   color: #fff;
   border-radius: 16px;
   cursor: pointer;
@@ -237,24 +236,21 @@
   backdrop-filter: blur(4px);
   opacity: 0.8;
 }
-
 .gallery-filter button:hover {
   opacity: 1;
   background-color: rgba(255, 182, 193, 0.9);
 }
-
 .gallery-filter button:active {
   transform: scale(0.92);
   box-shadow: 0 2px 6px rgba(255, 105, 180, 0.4);
 }
 
-/* 📌 搜索框区 */
+/* 搜索框 */
 .gallery-search {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
-
 .gallery-search input {
   width: 280px;
   padding: 8px 14px;
@@ -267,42 +263,124 @@
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(4px);
 }
-
 .gallery-search input:focus {
   box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
 }
 
-/* 📌 图片展示区 */
+/* 图片展示区 */
 .gallery-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
-
 .gallery-item {
   text-align: center;
   width: 220px;
 }
-
 .gallery-item img {
   max-width: 100%;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
+  cursor: zoom-in;
 }
-
 .gallery-item img:hover {
   transform: scale(1.05);
 }
-
 .gallery-item p {
   margin-top: 5px;
   font-weight: bold;
   color: #333;
 }
+
+/* 放大查看 Lightbox 样式 */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+  animation: zoomIn 0.3s ease;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;       /* 垂直居中 */
+  transform: translateY(-50%) scale(1);
+  font-size: 52px;       /* 字体大小 */
+  width: 60px;          /* 宽度 */
+  height: 60px;         /* 高度 */
+  padding: 0;           /* 内边距 */
+  background-color: rgba(250, 164, 164, 0.3);   /* 背景色 */
+  border: none;         /* 边框 */
+  border-radius: 30%;   /* 圆角 */
+  cursor: pointer;      /* 鼠标样式 */
+  opacity: 0.3;          /* 不透明度 */
+  transition: all 0.2s ease;
+  z-index: 1001;        /* 层级 */
+  color: #444;           /* 字体颜色 */
+  backdrop-filter: blur(4px);
+  display: flex;        /* 显示方式 */
+  align-items: center;          /* 垂直居中 */
+  justify-content: center;       /* 水平居中 */
+}
+/* 左右箭头 */  
+.lightbox-arrow.left {      
+  left: 40px;
+}
+.lightbox-arrow.right {
+  right: 40px;
+}
+.lightbox-arrow:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  background-color: rgba(250, 164, 164, 0.85);     /* 背景色 */
+  color: #000;
+}
+.lightbox-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+  background-color: rgba(250, 164, 164, 1);        /* 背景色 */
+}
+
+
+/* 分页按钮 */
+.page-btn {
+  margin: 0 6px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.page-btn:hover {
+  transform: scale(1.08);
+  background-color: #ffe4ec;
+}
+.page-btn:active {
+  transform: scale(0.95);
+  background-color: #ffc1d2;
+}
 </style>
-<!-- ✅ 分类按钮 -->
+<!-- 分类按钮 -->
 <div class="gallery-filter">
   <button onclick="filterGallery('all')">全部</button>
   <button onclick="filterGallery('Galgane')">Galgane</button>
@@ -310,132 +388,124 @@
   <button onclick="filterGallery('插图')">插图</button>
   <button onclick="filterGallery('二游')">二游</button>
 </div>
-<!-- ✅ 搜索框 -->
+<!-- 搜索框 -->
 <div class="gallery-search">
   <input type="text" id="searchInput" placeholder="输入图片名称..." onkeyup="searchGallery()" />
 </div>
-<!-- ✅ 图片展示 -->
-<div class="gallery-grid" id="gallery">
-  <!-- 图片由 JS 动态插入 -->
+<!-- 图片展示 -->
+<div class="gallery-grid" id="gallery"></div>
+<!-- 放大查看 Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-arrow left" onclick="event.stopPropagation(); showPrevImage()">←</button>
+  <img id="lightbox-img" src="" alt="preview">
+  <button class="lightbox-arrow right" onclick="event.stopPropagation(); showNextImage()">→</button>
 </div>
-<!-- ✅ JavaScript 图片数据 + 筛选逻辑 -->
+<!-- 分页器 -->
+<div class="gallery-pagination" style="text-align:center; margin-top:20px;" id="pagination"></div>
 <script>
   const images = [
-    {
-      name: "想要传达给你的爱恋",
-      category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E6%96%B0%E5%A0%82%E5%BD%A9%E9%9F%B31.png?raw=true"
-    },
-    {
-       name: "想要传达给你的爱恋",
-       category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E6%83%B3%E8%A6%81%E4%BC%A0%E8%BE%BE%E7%BB%99%E4%BD%A0%E7%9A%84%E7%88%B1%E6%81%8B-%E6%96%B0%E5%A0%82%E5%BD%A9%E9%9F%B31.jpg?raw=true"
-    },
-    {
-      name: "rewrite",
-      category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/Rewrite.jpg?raw=true"
-    },
-    {
-      name: "9-nine",
-      category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/9-nine-%E6%96%B0%E6%B5%B7%E5%A4%A9.jpg?raw=true"
-    },
-    {
-      name: "不败世界与终焉之花",
-      category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E4%B8%8D%E8%B4%A5%E4%B8%96%E7%95%8C%E4%B8%8E%E7%BB%88%E7%84%89%E4%B9%8B%E8%8A%B1-%E8%8E%B2.jpg?raw=true"
-    },
-    {
-      name: "樱之诗",
-      category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E6%A8%B1%E4%B9%8B%E8%AF%97.jpg?raw=true"
-    },
-    {
-       name: "阿罗娜",
-       category: "二游",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E9%98%BF%E7%BD%97%E5%A8%9C.jpg?raw=true"
-    },
-    {
-       name: "突然之间发现我已恋上你",
-       category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E7%AA%81%E7%84%B6%E4%B9%8B%E9%97%B4%E5%8F%91%E7%8E%B0%E6%88%91%E5%B7%B2%E6%81%8B%E4%B8%8A%E4%BD%A0%20-%20frame%2060%202024_10_3%2021_29_47.png?raw=true"
-    },
-    {
-       name: "五色浮影绽放于花之海洋",
-       category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E4%BA%94%E8%89%B2%E6%B5%AE%E5%BD%B1%E7%BB%BD%E6%94%BE%E4%BA%8E%E8%8A%B1%E4%B9%8B%E6%B5%B7%E6%B4%8B-%E8%8D%AF%E5%B8%88%E5%87%89%E5%AD%90.jpg?raw=true"
-    },
-    {
-       name: "纯白交响曲",
-       category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E7%BA%AF%E7%99%BD%E4%BA%A4%E5%93%8D%E6%9B%B2-%E7%93%9C%E7%94%9F%E6%A8%B1%E4%B9%83.jpg?raw=true"
-    },
-    {
-       name: "实妹相伴的大泉君",
-       category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E5%AE%9E%E5%A6%B9%E7%9B%B8%E4%BC%B4%E7%9A%84%E5%A4%A7%E6%B3%89%E5%90%9B.jpg?raw=true"
-    },
-    {
-       name: "因为妹妹太受欢迎了糟糕了",
-       category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E5%9B%A0%E4%B8%BA%E5%A6%B9%E5%A6%B9%E5%A4%AA%E5%8F%97%E6%AC%A2%E8%BF%8E%E4%BA%86%E7%B3%9F%E7%B3%95%E4%BA%86-%E6%B5%85%E5%9D%82%E7%88%B1%E8%8E%89.jpg?raw=true"
-    },
-    {
-       name: "新娘太好找了我很方",
-       category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E6%96%B0%E5%A8%98%E5%A4%AA%E5%A5%BD%E6%89%BE%E4%BA%86%E6%88%91%E5%BE%88%E6%96%B9-%E9%AB%98%E5%AE%AB%E8%8F%9C%E8%8F%9C%E5%8D%8E.jpg?raw=true"
-    },
-    {
-       name: "纸上的魔法使",
-       category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E7%BA%B8%E4%B8%8A%E7%9A%84%E9%AD%94%E6%B3%95%E4%BD%BF-%E6%9C%88%E5%A6%92%E5%A6%83.jpg?raw=true"
-    },{
-       name: "纸上的魔法使",
-       category: "Galgane",
-      url: "https://github.com/HeSpring/picgo/blob/main/%E7%BA%B8%E4%B8%8A%E7%9A%84%E9%AD%94%E6%B3%95%E4%BD%BF-%E5%A4%9C%E5%AD%90.jpg?raw=true"
-    },
-    // 🧩 继续添加更多图片…
-    /*
-    {
-       name: "",
-       category: "",
-      url: ""
-    },
-    */
+    { name: "想要传达给你的爱恋", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/新堂彩音1.png?raw=true" },
+    { name: "rewrite", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/Rewrite.jpg?raw=true" },
+    { name: "9-nine", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/9-nine-新海天.jpg?raw=true" },
+    { name: "不败世界与终焉之花", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/不败世界与终焉之花-莲.jpg?raw=true" },
+    { name: "樱之诗", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/樱之诗.jpg?raw=true" },
+    { name: "阿罗娜", category: "二游", url: "https://github.com/HeSpring/picgo/blob/main/阿罗娜.jpg?raw=true" },
+    { name: "突然之间发现我已恋上你", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/%E7%AA%81%E7%84%B6%E4%B9%8B%E9%97%B4%E5%8F%91%E7%8E%B0%E6%88%91%E5%B7%B2%E6%81%8B%E4%B8%8A%E4%BD%A0-%E5%85%BB%E8%80%81%E7%BA%BA.jpg?raw=true" },
+    { name: "五色浮影绽放于花之海洋", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/五色浮影绽放于花之海洋-药师凉子.jpg?raw=true" },
+    { name: "纯白交响曲", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/纯白交响曲-瓜生樱乃.jpg?raw=true" },
+    { name: "因为妹妹太受欢迎了糟糕了", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/因为妹妹太受欢迎了糟糕了-浅坂爱莉.jpg?raw=true" },
+    { name: "实妹相伴的大泉君", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/实妹相伴的大泉君.jpg?raw=true" },
+    { name: "新娘太好找了我很方", category: "Galgane", url: "https://github.com/HeSpring/picgo/blob/main/新娘太好找了我很方-高宫菜菜华.jpg?raw=true" }
   ];
 
-  const gallery = document.getElementById("gallery");    // 图片展示区
+  const gallery = document.getElementById("gallery");
+  const pagination = document.getElementById("pagination");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
 
-  function displayGallery(items) {
+  const ITEMS_PER_PAGE = 9;
+  let currentItems = images;
+  let currentPage = 1;
+  let currentPreviewIndex = 0;
+
+  function displayGalleryPage(page, items) {
     gallery.innerHTML = "";
-    items.forEach(img => {
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageItems = items.slice(start, end);
+
+    pageItems.forEach(img => {
       gallery.innerHTML += `
         <div class="gallery-item" data-category="${img.category}">
-          <img src="${img.url}" alt="${img.name}">
+          <img src="${img.url}" alt="${img.name}" onclick="openLightbox('${img.url}')">
           <p>${img.name}</p>
         </div>
       `;
     });
+
+    updatePagination(items.length, page);
+  }
+
+  function updatePagination(totalItems, currentPage) {
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+    pagination.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.innerText = i;
+      btn.className = "page-btn";
+      if (i === currentPage) {
+        btn.style.backgroundColor = "#ffb6c1";
+        btn.style.color = "#fff";
+      }
+      btn.onclick = () => {
+        currentPage = i;
+        displayGalleryPage(currentPage, currentItems);
+      };
+      pagination.appendChild(btn);
+    }
   }
 
   function filterGallery(category) {
-    if (category === "all") {
-      displayGallery(images);
-    } else {
-      const filtered = images.filter(img => img.category === category);
-      displayGallery(filtered);
-    }
+    currentItems = category === "all" ? images : images.filter(img => img.category === category);
+    currentPage = 1;
+    displayGalleryPage(currentPage, currentItems);
   }
 
   function searchGallery() {
     const query = document.getElementById("searchInput").value.toLowerCase();
-    const filtered = images.filter(img => img.name.toLowerCase().includes(query));
-    displayGallery(filtered);
+    currentItems = images.filter(img => img.name.toLowerCase().includes(query));
+    currentPage = 1;
+    displayGalleryPage(currentPage, currentItems);
   }
 
-  // 初始显示全部
-  displayGallery(images);
+  function openLightbox(url) {
+    currentPreviewIndex = currentItems.findIndex(img => img.url === url);
+    lightboxImg.src = url;
+    lightbox.style.display = "flex";
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+    lightboxImg.src = "";
+  }
+
+  function showPrevImage() {
+    if (currentPreviewIndex > 0) {
+      currentPreviewIndex--;
+      lightboxImg.src = currentItems[currentPreviewIndex].url;
+    }
+  }
+
+  function showNextImage() {
+    if (currentPreviewIndex < currentItems.length - 1) {
+      currentPreviewIndex++;
+      lightboxImg.src = currentItems[currentPreviewIndex].url;
+    }
+  }
+
+  // 初始化
+  displayGalleryPage(currentPage, currentItems);
 </script>
 
       </div>
