@@ -365,35 +365,33 @@ td {
   top: -6px;
   transform: rotate(-45deg);
 }
-pre code.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 1em
-}
-code.hljs {
-  padding: 3px 5px
-}
 /*
 
 Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
 
 */
 .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
   background: white;
-  color: black
+  color: black;
 }
+
 .hljs-comment,
 .hljs-quote,
 .hljs-variable {
-  color: #008000
+  color: #008000;
 }
+
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-built_in,
 .hljs-name,
 .hljs-tag {
-  color: #00f
+  color: #00f;
 }
+
 .hljs-string,
 .hljs-title,
 .hljs-section,
@@ -403,31 +401,39 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 .hljs-template-variable,
 .hljs-type,
 .hljs-addition {
-  color: #a31515
+  color: #a31515;
 }
+
 .hljs-deletion,
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-meta {
-  color: #2b91af
+  color: #2b91af;
 }
+
 .hljs-doctag {
-  color: #808080
+  color: #808080;
 }
+
 .hljs-attr {
-  color: #f00
+  color: #f00;
 }
+
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link {
-  color: #00b0e8
+  color: #00b0e8;
 }
+
+
 .hljs-emphasis {
-  font-style: italic
+  font-style: italic;
 }
+
 .hljs-strong {
-  font-weight: bold
+  font-weight: bold;
 }
+
 .highlight:hover .copy-btn,
 .code-container:hover .copy-btn {
   opacity: 1;
@@ -1241,7 +1247,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #b8b48b;
+    background: #ecfff4;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2352,6 +2358,14 @@ ul.breadcrumb li:last-child {
 .tag-cloud-10 {
   border-bottom-color: #111;
   color: #111;
+}
+.gt-header a,
+.gt-comments a,
+.gt-popup a {
+  border-bottom: 0;
+}
+.gt-container .gt-popup .gt-action.is--active::before {
+  top: 0.7em;
 }
 .search-active {
   overflow: hidden;
