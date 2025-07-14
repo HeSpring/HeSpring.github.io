@@ -69,7 +69,7 @@
   <script src="/js/third-party/statistics/lean-analytics.js" defer></script>
 
 
-
+<link rel="dns-prefetch" href="https://waline-server-lake.vercel.app/">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -317,8 +317,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2025/07/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%81%A2%E5%A4%8D%E6%96%87%E7%AB%A0/" itemprop="url">
-            <span itemprop="name">我的第一篇回归文章</span>
+          <a class="post-title-link" href="/2025/07/10/%E6%81%A2%E5%A4%8D%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AD%98%E6%A1%A3/" itemprop="url">
+            <span itemprop="name">恢复博客过程的存档</span>
           </a>
       </div>
 
@@ -337,8 +337,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2025/07/10/%E6%81%A2%E5%A4%8D%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AD%98%E6%A1%A3/" itemprop="url">
-            <span itemprop="name">恢复博客过程的存档</span>
+          <a class="post-title-link" href="/2025/07/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%81%A2%E5%A4%8D%E6%96%87%E7%AB%A0/" itemprop="url">
+            <span itemprop="name">我的第一篇回归文章</span>
           </a>
       </div>
 
@@ -404,10 +404,17 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
-
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Hespring","repo":"message-board","client_id":"Ov23liVaudkJQEmJ7yrM","client_secret":"dc8d19e76463fe07cbc8256ca8484e9c0300e735","admin_user":"Hespring","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"a634e207436695c1c50335196eff176b"}</script>
-<script src="/js/third-party/comments/gitalk.js" defer></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-server-lake.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/archives/2025/07/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
 
 </body>
 </html>
