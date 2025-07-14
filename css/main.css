@@ -1247,7 +1247,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #b97fff;
+    background: #21ff9a;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2898,6 +2898,26 @@ figure.highlight .gutter pre {
   border-radius: 8px;
   padding: 15px;
   transition: background-color 0.3s ease;
+}
+.v[data-class=v] .vpanel {
+  position: relative;
+  width: 100%;
+  flex-shrink: 1;
+  margin: 0.5em;
+  border: var(--waline-border);
+  border-radius: 0.75em;
+  background: rgba(230,178,178,0.3) !important;
+  box-shadow: var(--waline-box-shadow);
+}
+.v[data-class=v] .vcard .vmeta>span {
+  display: inline-block;
+  margin-right: 0.25em;
+  padding: 2px 4px;
+  border-radius: 0.2em;
+  background: rgba(184,184,184,0) !important;
+  color: #999;
+  font-size: var(--waline-info-font-size);
+  line-height: 1.5;
 }
 [data-theme="dark"] .content-wrap,
 [data-theme="dark"] .sidebar,
