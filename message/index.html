@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hespring.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"vs","dark":"vs"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content=".waline-container {     max-width: 680px;     margin: 0 auto;   }           new Waline({     el: &#39;#waline&#39;,     serverURL: &#39;https:&#x2F;&#x2F;waline-weld-gamma.vercel.app&#x2F;&#39;, &#x2F;&#x2F; 见下面说明     lang: &#39;zh-CN&#39;,     e">
+    <meta name="description" content=".waline-container {     max-width: 680px;   &#x2F;* 留言框最大宽度 *&#x2F;     border-radius: 20px;  &#x2F;* 留言框圆角 *&#x2F;     background-color: rgba(255, 255, 255, 0.5) !important;  &#x2F;* 留言框背景色 *&#x2F;     margin: 0 auto;    &#x2F;* 居中">
 <meta property="og:type" content="website">
 <meta property="og:title" content="留言板">
 <meta property="og:url" content="https://hespring.cn/message/index.html">
 <meta property="og:site_name" content="一椿一桓">
-<meta property="og:description" content=".waline-container {     max-width: 680px;     margin: 0 auto;   }           new Waline({     el: &#39;#waline&#39;,     serverURL: &#39;https:&#x2F;&#x2F;waline-weld-gamma.vercel.app&#x2F;&#39;, &#x2F;&#x2F; 见下面说明     lang: &#39;zh-CN&#39;,     e">
+<meta property="og:description" content=".waline-container {     max-width: 680px;   &#x2F;* 留言框最大宽度 *&#x2F;     border-radius: 20px;  &#x2F;* 留言框圆角 *&#x2F;     background-color: rgba(255, 255, 255, 0.5) !important;  &#x2F;* 留言框背景色 *&#x2F;     margin: 0 auto;    &#x2F;* 居中">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-14T12:00:12.024Z">
+<meta property="article:modified_time" content="2025-07-14T12:12:47.729Z">
 <meta property="article:author" content="Hespring">
 <meta name="twitter:card" content="summary">
 
@@ -214,8 +214,10 @@
       <div class="post-body">
           <style>
   .waline-container {
-    max-width: 680px;
-    margin: 0 auto;
+    max-width: 680px;   /* 留言框最大宽度 */
+    border-radius: 20px;  /* 留言框圆角 */
+    background-color: rgba(255, 255, 255, 0.5) !important;  /* 留言框背景色 */
+    margin: 0 auto;    /* 居中 */
   }
 </style>
 <div class="waline-container">
@@ -224,12 +226,12 @@
 <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
 <script>
   new Waline({
-    el: '#waline',
+    el: '#waline',        // 留言框容器
     serverURL: 'https://waline-weld-gamma.vercel.app/', // 见下面说明
     lang: 'zh-CN',
     emoji: ['https://unpkg.com/emoji-datasource-apple/img/apple/64/'],  // 二次元萌系emoji
     visitor: true,   // 统计访客IP，无需登录即可留言
-    pageSize: 10,
+    pageSize: 10,      // 每页显示条数
     placeholder: '相逢何必曾相识',
     requiredFields: [],  
   });
