@@ -297,6 +297,18 @@
       </tags>
   </entry>
   <entry>
+    <title>我的第一篇回归文章</title>
+    <url>/2025/07/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%81%A2%E5%A4%8D%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>之前搞的hexo-blog没做备份，旧电脑又卖了，导致我现在没有备份，所以只能重新搭建hexo-blog。苦兮兮，就当买个教训了，以后要好好备份啊。</p>
+]]></content>
+      <categories>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>恢复博客过程的存档</title>
     <url>/2025/07/10/%E6%81%A2%E5%A4%8D%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AD%98%E6%A1%A3/</url>
     <content><![CDATA[<h2 id="前言">前言</h2>
@@ -355,18 +367,6 @@
       </categories>
       <tags>
         <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的第一篇回归文章</title>
-    <url>/2025/07/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%81%A2%E5%A4%8D%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>之前搞的hexo-blog没做备份，旧电脑又卖了，导致我现在没有备份，所以只能重新搭建hexo-blog。苦兮兮，就当买个教训了，以后要好好备份啊。</p>
-]]></content>
-      <categories>
-        <category>碎碎念</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
 </search>
