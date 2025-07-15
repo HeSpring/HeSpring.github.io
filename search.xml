@@ -1,6 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo搭配Git常用指令</title>
+    <url>/2025/07/16/Hexo%E6%90%AD%E9%85%8DGit%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="前言">前言</h2>
+<p>为了防止我以后忘记了一键三连的指令，还有方便以后的学习，搜索总结了这一篇文章。</p>
+<h2 id="一、Hexo-基本操作指令">一、Hexo 基本操作指令</h2>
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始化部署插件（只需要一次）</td>
+<td>npm install hexo-deployer-git --save</td>
+</tr>
+<tr>
+<td>初始化 Hexo 项目</td>
+<td><code>hexo init</code></td>
+</tr>
+<tr>
+<td>安装依赖</td>
+<td><code>npm install</code></td>
+</tr>
+<tr>
+<td>启动本地预览服务器</td>
+<td><code>hexo s</code> 或 <code>hexo server</code></td>
+</tr>
+<tr>
+<td>清理缓存</td>
+<td><code>hexo clean</code></td>
+</tr>
+<tr>
+<td>生成静态页面</td>
+<td><code>hexo g</code> 或 <code>hexo generate</code></td>
+</tr>
+<tr>
+<td>部署网站（需要配置 <code>_config.yml</code> 中的 deploy）</td>
+<td><code>hexo d</code> 或 <code>hexo deploy</code></td>
+</tr>
+<tr>
+<td>一键生成并部署</td>
+<td><code>hexo g -d</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="二、新建内容相关命令">二、新建内容相关命令</h2>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新建文章</td>
+<td><code>hexo new &quot;文章标题&quot;</code></td>
+</tr>
+<tr>
+<td>新建页面（如关于页、留言板）</td>
+<td><code>hexo new page &quot;about&quot;</code></td>
+</tr>
+<tr>
+<td>新建草稿（需要 <code>_config.yml</code> 配置 <code>post_asset_folder: true</code>）</td>
+<td><code>hexo new draft &quot;草稿标题&quot;</code></td>
+</tr>
+<tr>
+<td>发布草稿为正式文章</td>
+<td><code>hexo publish &quot;草稿标题&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="三、Git-初始化与部署（Hexo-GitHub-Pages）">三、Git 初始化与部署（Hexo + GitHub Pages）</h2>
+<h5 id="第一次部署（只执行一次）：">第一次部署（只执行一次）：</h5>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化 git 仓库（Hexo 根目录）</span></span><br><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/用户名/用户名.github.io.git</span><br></pre></td></tr></table></figure>
+<h5 id="然后安装-Hexo-的部署插件：">然后安装 Hexo 的部署插件：</h5>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h5 id="并在-config-yml-中添加部署配置：">并在 <code>_config.yml</code> 中添加部署配置：</h5>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用户名/用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span>  <span class="comment"># GitHub Pages 新项目默认用 main 分支</span></span><br></pre></td></tr></table></figure>
+<h2 id="四、常见-Git-清理与回滚命令">四、常见 Git 清理与回滚命令</h2>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查看状态</td>
+<td><code>git status</code></td>
+</tr>
+<tr>
+<td>查看历史</td>
+<td><code>git log</code></td>
+</tr>
+<tr>
+<td>撤销某次 commit</td>
+<td><code>git reset --soft HEAD^</code>（保留修改）</td>
+</tr>
+<tr>
+<td>强制回退到某个版本</td>
+<td><code>git reset --hard 提交ID</code></td>
+</tr>
+<tr>
+<td>丢弃所有未提交改动</td>
+<td><code>git checkout .</code></td>
+</tr>
+<tr>
+<td>强推（不推荐，谨慎使用）</td>
+<td><code>git push origin main --force</code></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo+Next主题的页面透明化设置</title>
     <url>/2025/07/13/Hexo-Next%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E%E5%8C%96%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="前言">前言</h2>
