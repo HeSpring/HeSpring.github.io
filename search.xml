@@ -1,6 +1,848 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>NX007常用快捷键</title>
+    <url>/2025/07/18/NX007%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<p><strong>Siemens NX 2007</strong>（也称 NX 2207，即 NX 的 2022 年 7 月版本）中一些常用的快捷键列表，适用于建模、装配、制图等模块：</p>
+<span id="more"></span>
+<h2 id="通用快捷键">通用快捷键</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl + N</code></td>
+<td>新建文件</td>
+</tr>
+<tr>
+<td><code>Ctrl + O</code></td>
+<td>打开文件</td>
+</tr>
+<tr>
+<td><code>Ctrl + S</code></td>
+<td>保存文件</td>
+</tr>
+<tr>
+<td><code>Ctrl + P</code></td>
+<td>打印</td>
+</tr>
+<tr>
+<td><code>Ctrl + Z</code></td>
+<td>撤销</td>
+</tr>
+<tr>
+<td><code>Ctrl + Y</code></td>
+<td>重做</td>
+</tr>
+<tr>
+<td><code>Ctrl + C</code></td>
+<td>复制</td>
+</tr>
+<tr>
+<td><code>Ctrl + V</code></td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td><code>Ctrl + X</code></td>
+<td>剪切</td>
+</tr>
+<tr>
+<td><code>Ctrl + A</code></td>
+<td>全选</td>
+</tr>
+<tr>
+<td><code>Ctrl + Tab</code></td>
+<td>切换窗口</td>
+</tr>
+</tbody>
+</table>
+<h2 id="建模模块快捷键">建模模块快捷键</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl + Shift + E</code></td>
+<td>拉伸（Extrude）</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + R</code></td>
+<td>旋转（Revolve）</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + H</code></td>
+<td>孔（Hole）</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + P</code></td>
+<td>拔模（Draft）</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + U</code></td>
+<td>联集（Boolean Unite）</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + D</code></td>
+<td>差集（Boolean Subtract）</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + I</code></td>
+<td>插入（Boolean Intersect）</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + F</code></td>
+<td>倒圆角（Fillet）</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + C</code></td>
+<td>倒斜角（Chamfer）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="草图（Sketch）快捷键">草图（Sketch）快捷键</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>L</code></td>
+<td>线段 Line</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>矩形 Rectangle</td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td>圆 Circle</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td>修剪 Trim</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>对齐 Align</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td>偏置 Offset</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>尺寸 Dimension</td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td>等距 Equal</td>
+</tr>
+</tbody>
+</table>
+<h2 id="装配模块快捷键】">装配模块快捷键】</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl + Shift + M</code></td>
+<td>添加组件</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + A</code></td>
+<td>装配约束（Assembly Constraint）</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + S</code></td>
+<td>替换组件</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + G</code></td>
+<td>爆炸视图生成</td>
+</tr>
+</tbody>
+</table>
+<h2 id="制图模块（Drafting）快捷键">制图模块（Drafting）快捷键</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>V</code></td>
+<td>投影视图 View</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>剖视图 Section</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>部分视图 Partial View</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>尺寸 Dimension</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td>文本 Text</td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td>中心线 Centerline</td>
+</tr>
+</tbody>
+</table>
+<h2 id="查看与导航快捷键">查看与导航快捷键</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>F8</code></td>
+<td>动态旋转</td>
+</tr>
+<tr>
+<td><code>F9</code></td>
+<td>动态缩放</td>
+</tr>
+<tr>
+<td><code>F10</code></td>
+<td>动态平移</td>
+</tr>
+<tr>
+<td><code>Ctrl + 1</code> ~ <code>Ctrl + 6</code></td>
+<td>六视图快速切换</td>
+</tr>
+<tr>
+<td><code>Ctrl + Shift + Q</code></td>
+<td>设置工作坐标系</td>
+</tr>
+</tbody>
+</table>
+<h3 id="提示：">提示：</h3>
+<ul>
+<li>NX 支持自定义快捷键，可通过 <strong>菜单 &gt; 工具 &gt; 快捷键（Customize）</strong> 进行修改。</li>
+<li>部分快捷键可能因版本或界面语言不同略有变化。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>机械</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AotuCAD常用快捷键</title>
+    <url>/2025/07/18/AotuCAD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<p><strong>AutoCAD 2025 常用快捷键</strong>（含命令缩写及功能说明），适合提高绘图效率。AutoCAD 的快捷键大多数在多个版本间通用。</p>
+<span id="more"></span>
+<h2 id="基本操作类">基本操作类</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>命令全称</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>L</code></td>
+<td>LINE</td>
+<td>画直线</td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td>CIRCLE</td>
+<td>画圆</td>
+</tr>
+<tr>
+<td><code>REC</code></td>
+<td>RECTANGLE</td>
+<td>画矩形</td>
+</tr>
+<tr>
+<td><code>PL</code></td>
+<td>PLINE</td>
+<td>画多段线</td>
+</tr>
+<tr>
+<td><code>POL</code></td>
+<td>POLYGON</td>
+<td>绘制正多边形</td>
+</tr>
+<tr>
+<td><code>EL</code></td>
+<td>ELLIPSE</td>
+<td>绘制椭圆</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>ARC</td>
+<td>绘制圆弧</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>HATCH</td>
+<td>图案填充</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>BLOCK</td>
+<td>创建块定义</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>INSERT</td>
+<td>插入块</td>
+</tr>
+</tbody>
+</table>
+<h2 id="编辑修改类">编辑修改类</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>命令全称</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M</code></td>
+<td>MOVE</td>
+<td>移动对象</td>
+</tr>
+<tr>
+<td><code>CO</code></td>
+<td>COPY</td>
+<td>复制对象</td>
+</tr>
+<tr>
+<td><code>RO</code></td>
+<td>ROTATE</td>
+<td>旋转对象</td>
+</tr>
+<tr>
+<td><code>SC</code></td>
+<td>SCALE</td>
+<td>缩放对象</td>
+</tr>
+<tr>
+<td><code>MI</code></td>
+<td>MIRROR</td>
+<td>镜像</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>EXPLODE</td>
+<td>分解</td>
+</tr>
+<tr>
+<td><code>TR</code></td>
+<td>TRIM</td>
+<td>修剪</td>
+</tr>
+<tr>
+<td><code>EX</code></td>
+<td>EXTEND</td>
+<td>延伸</td>
+</tr>
+<tr>
+<td><code>STRETCH</code></td>
+<td>STRETCH</td>
+<td>拉伸</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>FILLET</td>
+<td>倒圆角</td>
+</tr>
+<tr>
+<td><code>CHA</code></td>
+<td>CHAMFER</td>
+<td>倒角</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td>OFFSET</td>
+<td>偏移</td>
+</tr>
+<tr>
+<td><code>AR</code></td>
+<td>ARRAY</td>
+<td>阵列（矩形/环形等）快捷键</td>
+</tr>
+</tbody>
+</table>
+<h2 id="对象捕捉与辅助">对象捕捉与辅助</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>命令全称</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>F3</code></td>
+<td>-</td>
+<td>开关对象捕捉（OSNAP）</td>
+</tr>
+<tr>
+<td><code>F8</code></td>
+<td>-</td>
+<td>正交模式开关（ORTHO）</td>
+</tr>
+<tr>
+<td><code>F9</code></td>
+<td>-</td>
+<td>栅格捕捉开关（SNAP）</td>
+</tr>
+<tr>
+<td><code>F10</code></td>
+<td>-</td>
+<td>极轴追踪（Polar Tracking）</td>
+</tr>
+<tr>
+<td><code>F11</code></td>
+<td>-</td>
+<td>对象捕捉追踪</td>
+</tr>
+<tr>
+<td><code>TAB</code></td>
+<td>-</td>
+<td>循环选择对象捕捉点</td>
+</tr>
+</tbody>
+</table>
+<h2 id="绘图管理和工具">绘图管理和工具</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>命令全称</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Z</code></td>
+<td>ZOOM</td>
+<td>缩放视图</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>PAN</td>
+<td>平移视图</td>
+</tr>
+<tr>
+<td><code>LA</code></td>
+<td>LAYER</td>
+<td>图层管理器</td>
+</tr>
+<tr>
+<td><code>XL</code></td>
+<td>XLINE</td>
+<td>构造线</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>DIMSTYLE</td>
+<td>标注样式管理器</td>
+</tr>
+<tr>
+<td><code>DIM</code></td>
+<td>DIMENSION</td>
+<td>自动标注（长度、角度等）</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td>MTEXT</td>
+<td>多行文字输入</td>
+</tr>
+<tr>
+<td><code>DT</code></td>
+<td>TEXT</td>
+<td>单行文字输入</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件操作与输出">文件操作与输出</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>命令全称</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>QSAVE</code></td>
+<td>-</td>
+<td>快速保存</td>
+</tr>
+<tr>
+<td><code>SAVEAS</code></td>
+<td>-</td>
+<td>另存为</td>
+</tr>
+<tr>
+<td><code>PLOT</code></td>
+<td>-</td>
+<td>打印/输出图纸</td>
+</tr>
+<tr>
+<td><code>EXPORT</code></td>
+<td>-</td>
+<td>导出文件</td>
+</tr>
+<tr>
+<td><code>XREF</code></td>
+<td>-</td>
+<td>外部参照管理器</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>机械</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PS常用快捷键</title>
+    <url>/2025/07/18/PS%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<p><strong>Photoshop 2021（PS2021）常用快捷键大全</strong>，覆盖了工具切换、图层操作、选择、编辑等多个方面，适合日常使用和高效工作。</p>
+<span id="more"></span>
+<h2 id="工具快捷键">工具快捷键</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V</td>
+<td>移动工具</td>
+</tr>
+<tr>
+<td>M</td>
+<td>矩形/椭圆选框工具</td>
+</tr>
+<tr>
+<td>L</td>
+<td>套索工具（按Shift循环多种）</td>
+</tr>
+<tr>
+<td>W</td>
+<td>快速选择工具 / 魔棒工具</td>
+</tr>
+<tr>
+<td>C</td>
+<td>裁剪工具</td>
+</tr>
+<tr>
+<td>I</td>
+<td>吸管工具</td>
+</tr>
+<tr>
+<td>J</td>
+<td>修复画笔/污点修复等</td>
+</tr>
+<tr>
+<td>B</td>
+<td>画笔工具</td>
+</tr>
+<tr>
+<td>S</td>
+<td>仿制图章工具</td>
+</tr>
+<tr>
+<td>E</td>
+<td>橡皮擦工具</td>
+</tr>
+<tr>
+<td>G</td>
+<td>油漆桶/渐变工具</td>
+</tr>
+<tr>
+<td>A</td>
+<td>路径选择工具</td>
+</tr>
+<tr>
+<td>T</td>
+<td>文字工具</td>
+</tr>
+<tr>
+<td>P</td>
+<td>钢笔工具</td>
+</tr>
+<tr>
+<td>U</td>
+<td>形状工具</td>
+</tr>
+<tr>
+<td>H</td>
+<td>抓手工具</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>缩放工具</td>
+</tr>
+<tr>
+<td>D</td>
+<td>恢复默认前景/背景色</td>
+</tr>
+<tr>
+<td>X</td>
+<td>交换前景/背景色</td>
+</tr>
+</tbody>
+</table>
+<h2 id="图层相关">图层相关</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + J</td>
+<td>复制图层</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + J</td>
+<td>剪切图层</td>
+</tr>
+<tr>
+<td>Ctrl + G</td>
+<td>组合图层为组</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + G</td>
+<td>取消图层组</td>
+</tr>
+<tr>
+<td>Ctrl + E</td>
+<td>合并选中图层</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + E</td>
+<td>合并可见图层</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + Shift + E</td>
+<td>盖印图层（新建合并图层）</td>
+</tr>
+<tr>
+<td>Ctrl + T</td>
+<td>自由变换</td>
+</tr>
+<tr>
+<td>Ctrl + [ / ]</td>
+<td>向下/上移动图层顺序</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + [ / ]</td>
+<td>置于底层 / 顶层</td>
+</tr>
+</tbody>
+</table>
+<h2 id="编辑操作">编辑操作</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + Z</td>
+<td>撤销（多步）</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + Z</td>
+<td>多步撤销</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Z</td>
+<td>重做</td>
+</tr>
+<tr>
+<td>Ctrl + C / V / X</td>
+<td>复制 / 粘贴 / 剪切</td>
+</tr>
+<tr>
+<td>Ctrl + A</td>
+<td>全选</td>
+</tr>
+<tr>
+<td>Ctrl + D</td>
+<td>取消选择</td>
+</tr>
+<tr>
+<td>Ctrl + F</td>
+<td>应用上一个滤镜</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + I</td>
+<td>反选</td>
+</tr>
+<tr>
+<td>Ctrl + Backspace</td>
+<td>填充背景色</td>
+</tr>
+<tr>
+<td>Alt + Backspace</td>
+<td>填充前景色</td>
+</tr>
+</tbody>
+</table>
+<h2 id="视图控制">视图控制</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + + / -</td>
+<td>放大 / 缩小</td>
+</tr>
+<tr>
+<td>Ctrl + 0</td>
+<td>屏幕适配大小</td>
+</tr>
+<tr>
+<td>Ctrl + 1</td>
+<td>实际像素显示</td>
+</tr>
+<tr>
+<td>空格 + 拖动</td>
+<td>临时切换抓手工具</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>显示/隐藏面板</td>
+</tr>
+<tr>
+<td>F</td>
+<td>切换屏幕模式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件操作">文件操作</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + N</td>
+<td>新建文件</td>
+</tr>
+<tr>
+<td>Ctrl + O</td>
+<td>打开文件</td>
+</tr>
+<tr>
+<td>Ctrl + S</td>
+<td>保存文件</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + S</td>
+<td>另存为</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + Shift + S</td>
+<td>存储为Web（导出）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用辅助操作">常用辅助操作</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + R</td>
+<td>显示/隐藏标尺</td>
+</tr>
+<tr>
+<td>Ctrl + ;</td>
+<td>显示/隐藏参考线</td>
+</tr>
+<tr>
+<td>Ctrl + ’</td>
+<td>显示/隐藏网格</td>
+</tr>
+<tr>
+<td>Shift + 拖动对象</td>
+<td>保持比例</td>
+</tr>
+<tr>
+<td>Alt + 拖动对象</td>
+<td>快速复制</td>
+</tr>
+<tr>
+<td>Ctrl + 鼠标点击图层缩略图</td>
+<td>载入选区</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>摄影</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo搭配Git常用指令</title>
     <url>/2025/07/16/Hexo%E6%90%AD%E9%85%8DGit%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
     <content><![CDATA[<h2 id="前言">前言</h2>
@@ -119,6 +961,12 @@
 </tbody>
 </table>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hexo+Next主题的页面透明化设置</title>
