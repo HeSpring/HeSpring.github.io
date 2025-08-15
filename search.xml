@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Android本地音乐播放器推荐</title>
+    <url>/2025/08/15/Android%E6%9C%AC%E5%9C%B0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h2 id="前言">前言</h2>
+<p>最近用酷狗听歌，开了年费超级会员还是一直弹广告，被恶心麻了，下决心搞一个本地的播放器，至于会员就在PC端用吧，也不算白开。到期以后是不可能续了，太恶心了。花了两天时间一口气下载了八百多首歌，90%都是<code>flac</code>格式，大小有20个G，加上歌词文件估计有个25G左右了，比较废空间，手机空间小的就不建议搞本地播放器了。</p>
+<p>注意：以下操作均在电脑上完成。</p>
+<span id="more"></span>
+<h2 id="正文">正文</h2>
+<h4 id="格式转换">格式转换</h4>
+<p>在网上一通搜索和试用之后，我选择了<code>Salt Player</code>（椒盐音乐）作为我<code>Android</code>平台的听歌软件，目前作者已经支持小米应用商店下载。</p>
+<p>本地播放器有了，本地音乐是个问题，从酷狗下载的有少部分是<code>flac</code>和<code>mp3</code>格式的，大部分都是<code>kgg</code>、<code>kgma</code>和<code>kgm</code>格式的，这几个加密格式除了酷狗其他的都播放不了，就很烦。但我找到了对应的格式转换器，工具来源B站，已三连感谢UP主。本文不提供下载方式，如需要可自行查找。</p>
+<p>注意：<code>kgg</code>格式转换完成后会出现<code>_kgg-dec</code>在文件名字后面，非常不利于后面添加歌词文件，可以在文件目录下新建文本文件，添加如下代码：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">Setlocal</span> Enabledelayedexpansion</span><br><span class="line"><span class="built_in">set</span> &quot;str=你要删除的文字&quot;</span><br><span class="line"><span class="keyword">for</span> /f &quot;delims=&quot; <span class="variable">%%i</span> <span class="keyword">in</span> (&#x27;<span class="built_in">dir</span> /b *.*&#x27;) <span class="keyword">do</span> (</span><br><span class="line"><span class="built_in">set</span> &quot;var=<span class="variable">%%i</span>&quot; &amp; <span class="built_in">ren</span> &quot;<span class="variable">%%i</span>&quot; &quot;<span class="variable">!var:%str%=!</span>&quot;)</span><br></pre></td></tr></table></figure>
+<p>本文中的完整代码如下：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">Setlocal</span> Enabledelayedexpansion</span><br><span class="line"><span class="built_in">set</span> &quot;str=_kgg-dec&quot;</span><br><span class="line"><span class="keyword">for</span> /f &quot;delims=&quot; <span class="variable">%%i</span> <span class="keyword">in</span> (&#x27;<span class="built_in">dir</span> /b *.*&#x27;) <span class="keyword">do</span> (</span><br><span class="line"><span class="built_in">set</span> &quot;var=<span class="variable">%%i</span>&quot; &amp; <span class="built_in">ren</span> &quot;<span class="variable">%%i</span>&quot; &quot;<span class="variable">!var:%str%=!</span>&quot;)</span><br></pre></td></tr></table></figure>
+<p>保存文本，把文本文件重命名为&quot;<code>批量重命名.bat</code>&quot;，右键选择以管理员身份运行，这样所有的文件就自动去掉<code>_kgg-dec</code>了，方便后面添加同名歌词文件。</p>
+<h4 id="歌词下载">歌词下载</h4>
+<p>酷狗下载的歌词是<code>krc</code>格式的，要在本地使用需要下载更通用的<code>lrc</code>格式的歌词。本文推荐一个在<code>GitHub</code>上简单易用的精准歌词(逐字歌词/卡拉OK歌词)下载匹配工具<code>LDDC</code>，大佬的项目链接：<code>https://github.com/chenmozhijin/LDDC.git</code></p>
+<p>使用教程非常详细，本文不再赘述，只提醒如下注意事项：</p>
+<p>歌词文件与歌曲文件需要同名，在<code>LDDC</code>下载时建议把“ 歌词文件名 ”选项改为“ 与歌曲文件名相同 ”，这样后续就不需要再改名字了。</p>
+<p>都下载完成后就可以传到手机上面了，然后就可以美美听歌了，不会有任何广告，启动速度超快。用了一天多了，果断赞助了18块钱买下Pro版，好的软件值得支持。感谢作者。</p>
+<h4 id="附">附</h4>
+<p>如有需要文中的转换工具留言邮箱即可，也可以发邮件给我，我看到了会发。</p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>NX007常用快捷键</title>
     <url>/2025/07/18/NX007%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<p><strong>Siemens NX 2007</strong>（也称 NX 2207，即 NX 的 2022 年 7 月版本）中一些常用的快捷键列表，适用于建模、装配、制图等模块：</p>
