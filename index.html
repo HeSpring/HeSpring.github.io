@@ -199,6 +199,123 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hespring.cn/2025/09/08/Hexo-%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub-Pages-%E7%9A%84-SSH-443-%E7%AB%AF%E5%8F%A3%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dg-4.png">
+      <meta itemprop="name" content="Hespring">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一椿一桓">
+      <meta itemprop="description" content="一个闲得无聊的人，不喜欢编程，喜欢折腾。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 一椿一桓">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/09/08/Hexo-%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub-Pages-%E7%9A%84-SSH-443-%E7%AB%AF%E5%8F%A3%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">Hexo 博客部署到 GitHub Pages 的 SSH 443 端口解决方案</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-09-08 23:35:55" itemprop="dateCreated datePublished" datetime="2025-09-08T23:35:55+08:00">2025-09-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-09-08 23:55:13" itemprop="dateModified" datetime="2025-09-08T23:55:13+08:00">2025-09-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2025/09/08/Hexo-%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub-Pages-%E7%9A%84-SSH-443-%E7%AB%AF%E5%8F%A3%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo 博客部署到 GitHub Pages 的 SSH 443 端口解决方案" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="前言">前言</h2>
+<p>在国内网络环境下，很多人使用 Hexo 部署博客到 GitHub Pages 时会遇到一个问题：使用 SSH 默认的 22 端口会无法连接 GitHub，报错类似：</p>
+<p><code>ssh: connect to host github.com port 22: Connection timed out</code></p>
+<p>今天我记录一下我自己解决这个问题的过程，方便大家参考。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/09/08/Hexo-%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub-Pages-%E7%9A%84-SSH-443-%E7%AB%AF%E5%8F%A3%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hespring.cn/2025/08/15/Android%E6%9C%AC%E5%9C%B0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E6%8E%A8%E8%8D%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1214,122 +1331,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hespring.cn/2025/07/11/%E7%BB%99%E4%B8%80%E4%BD%8D%E6%96%87%E5%AD%A6%E9%9D%92%E5%B9%B4%E7%9A%84%E5%85%AC%E5%BC%80%E7%8A%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/dg-4.png">
-      <meta itemprop="name" content="Hespring">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一椿一桓">
-      <meta itemprop="description" content="一个闲得无聊的人，不喜欢编程，喜欢折腾。">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 一椿一桓">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/07/11/%E7%BB%99%E4%B8%80%E4%BD%8D%E6%96%87%E5%AD%A6%E9%9D%92%E5%B9%B4%E7%9A%84%E5%85%AC%E5%BC%80%E7%8A%B6/" class="post-title-link" itemprop="url">给一位文学青年的公开状</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-07-11 23:27:10" itemprop="dateCreated datePublished" datetime="2025-07-11T23:27:10+08:00">2025-07-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-13 23:41:41" itemprop="dateModified" datetime="2025-07-13T23:41:41+08:00">2025-07-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%BF%A1/" itemprop="url" rel="index"><span itemprop="name">信</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/2025/07/11/%E7%BB%99%E4%B8%80%E4%BD%8D%E6%96%87%E5%AD%A6%E9%9D%92%E5%B9%B4%E7%9A%84%E5%85%AC%E5%BC%80%E7%8A%B6/" class="post-meta-item leancloud_visitors" data-flag-title="给一位文学青年的公开状" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>11 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>作者：郁达夫<br>
-（原载1924年11月16日《晨报副刊》）<br>
-今天的风沙实在太大了，中午吃饭之后，我因为还要去教书，所以没有许多工夫和你谈天。我坐在车上，一路的向北走去，沙石飞进了我的眼睛。一直到午后四点钟止，我的眼睛四周的红圈，还没有褪尽。恐怕同学们见了要笑我，所以于上课堂之先，我从高窗口在日光大风里把一双眼睛曝晒了许多时。我今天上你那公寓里来看了你那一副样子，觉得什么话也说不出来。现在我想趁着这大家已经睡寂了的几点钟工夫，把我要说的话，写一点在纸上。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2025/07/11/%E7%BB%99%E4%B8%80%E4%BD%8D%E6%96%87%E5%AD%A6%E9%9D%92%E5%B9%B4%E7%9A%84%E5%85%AC%E5%BC%80%E7%8A%B6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1354,14 +1355,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">21k</span>
+    <span title="站点总字数">22k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:09</span>
+    <span title="站点阅读时长">1:13</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
