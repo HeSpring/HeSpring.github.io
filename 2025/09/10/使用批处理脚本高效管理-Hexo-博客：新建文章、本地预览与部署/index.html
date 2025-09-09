@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/web-app-manifest-192x192.png">
+  <link rel="mask-icon" href="/images/logo-algolia-nebula-blue-full.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-loading-bar.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hespring.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"vs","dark":"vs"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="前言 在日常使用 Hexo 进行博客写作和管理时，我们常常需要重复执行一些命令：新建文章、生成和预览网站、部署到远程仓库等。为了提高效率，可以通过 批处理脚本（.bat） 来自动化这些操作。本文将分享我制作的三个实用脚本，并详细说明其功能和使用方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用批处理脚本高效管理 Hexo 博客：新建文章、本地预览与部署">
+<meta property="og:url" content="https://hespring.cn/2025/09/10/%E4%BD%BF%E7%94%A8%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E9%AB%98%E6%95%88%E7%AE%A1%E7%90%86-Hexo-%E5%8D%9A%E5%AE%A2%EF%BC%9A%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E3%80%81%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E4%B8%8E%E9%83%A8%E7%BD%B2/index.html">
+<meta property="og:site_name" content="一椿一桓">
+<meta property="og:description" content="前言 在日常使用 Hexo 进行博客写作和管理时，我们常常需要重复执行一些命令：新建文章、生成和预览网站、部署到远程仓库等。为了提高效率，可以通过 批处理脚本（.bat） 来自动化这些操作。本文将分享我制作的三个实用脚本，并详细说明其功能和使用方法。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-09-09T18:56:17.000Z">
+<meta property="article:modified_time" content="2025-09-09T19:03:23.920Z">
+<meta property="article:author" content="Hespring">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hespring.cn/2025/09/10/%E4%BD%BF%E7%94%A8%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E9%AB%98%E6%95%88%E7%AE%A1%E7%90%86-Hexo-%E5%8D%9A%E5%AE%A2%EF%BC%9A%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E3%80%81%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E4%B8%8E%E9%83%A8%E7%BD%B2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hespring.cn/2025/09/10/%E4%BD%BF%E7%94%A8%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E9%AB%98%E6%95%88%E7%AE%A1%E7%90%86-Hexo-%E5%8D%9A%E5%AE%A2%EF%BC%9A%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E3%80%81%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E4%B8%8E%E9%83%A8%E7%BD%B2/","path":"2025/09/10/使用批处理脚本高效管理-Hexo-博客：新建文章、本地预览与部署/","title":"使用批处理脚本高效管理 Hexo 博客：新建文章、本地预览与部署"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用批处理脚本高效管理 Hexo 博客：新建文章、本地预览与部署 | 一椿一桓</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"fHSXlu2ZcWCy10F8f79CVWdf-gzGzoHsz","app_key":"QMAm3TDKEUweFvFkXmOVC6KD","server_url":"https://fhsxlu2z.lc-cn-n1-shared.com","security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">一椿一桓</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我的皮囊不好看，我的灵魂很无趣。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-宅基地"><a href="/" rel="section"><i class="fa solid fa-house-chimney fa-fw"></i>宅基地</a></li><li class="menu-item menu-item-关于我"><a href="/about/" rel="section"><i class="fa solid fa-cat fa-fw"></i>关于我</a></li><li class="menu-item menu-item-魔法签"><a href="/tags/" rel="section"><i class="fa solid fa-wand-magic-sparkles fa-fw"></i>魔法签</a></li><li class="menu-item menu-item-资料库"><a href="/categories/" rel="section"><i class="fa solid fa-boxes-stacked fa-fw"></i>资料库</a></li><li class="menu-item menu-item-时光录"><a href="/archives/" rel="section"><i class="fa solid fa-clock-rotate-left fa-fw"></i>时光录</a></li><li class="menu-item menu-item-影画册"><a href="/photo/" rel="section"><i class="fa solid fa-camera-retro fa-fw"></i>影画册</a></li><li class="menu-item menu-item-轻图书"><a href="/books/" rel="section"><i class="fa solid fa-book-open-reader fa-fw"></i>轻图书</a></li><li class="menu-item menu-item-留言板"><a href="/message/" rel="section"><i class="fa solid fa-comment-dots fa-fw"></i>留言板</a></li><li class="menu-item menu-item-友链喵"><a href="/links/" rel="section"><i class="fa solid fa-link fa-fw"></i>友链喵</a></li><li class="menu-item menu-item-小工具"><a href="/raw-link/" rel="section"><i class="fa solid fa-tools fa-fw"></i>小工具</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E8%84%9A%E6%9C%AC"><span class="nav-number">2.</span> <span class="nav-text">一、新建文章脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-number">2.1.</span> <span class="nav-text">脚本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">脚本示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">使用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E7%BD%91%E7%AB%99%E8%84%9A%E6%9C%AC"><span class="nav-number">3.</span> <span class="nav-text">二、本地预览网站脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E5%8A%9F%E8%83%BD-2"><span class="nav-number">3.1.</span> <span class="nav-text">脚本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E7%A4%BA%E4%BE%8B-2"><span class="nav-number">3.1.1.</span> <span class="nav-text">脚本示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-2"><span class="nav-number">3.2.</span> <span class="nav-text">使用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99%E8%84%9A%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">三、部署网站脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E5%8A%9F%E8%83%BD-3"><span class="nav-number">4.1.</span> <span class="nav-text">脚本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E7%A4%BA%E4%BE%8B-3"><span class="nav-number">4.1.1.</span> <span class="nav-text">脚本示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-3"><span class="nav-number">4.2.</span> <span class="nav-text">使用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hespring"
+      src="/images/dg-4.png">
+  <p class="site-author-name" itemprop="name">Hespring</p>
+  <div class="site-description" itemprop="description">一个闲得无聊的人，不喜欢编程，喜欢折腾。</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Hespring" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Hespring" rel="noopener me" target="_blank"><i class="fa-brands fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact/" title="E-Mail → &#x2F;contact&#x2F;" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hespring.cn/2025/09/10/%E4%BD%BF%E7%94%A8%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E9%AB%98%E6%95%88%E7%AE%A1%E7%90%86-Hexo-%E5%8D%9A%E5%AE%A2%EF%BC%9A%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E3%80%81%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E4%B8%8E%E9%83%A8%E7%BD%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dg-4.png">
+      <meta itemprop="name" content="Hespring">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一椿一桓">
+      <meta itemprop="description" content="一个闲得无聊的人，不喜欢编程，喜欢折腾。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="使用批处理脚本高效管理 Hexo 博客：新建文章、本地预览与部署 | 一椿一桓">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用批处理脚本高效管理 Hexo 博客：新建文章、本地预览与部署
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-09-10 02:56:17" itemprop="dateCreated datePublished" datetime="2025-09-10T02:56:17+08:00">2025-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-09-10 03:03:23" itemprop="dateModified" datetime="2025-09-10T03:03:23+08:00">2025-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Next/" itemprop="url" rel="index"><span itemprop="name">Next</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2025/09/10/%E4%BD%BF%E7%94%A8%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E9%AB%98%E6%95%88%E7%AE%A1%E7%90%86-Hexo-%E5%8D%9A%E5%AE%A2%EF%BC%9A%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E3%80%81%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="post-meta-item leancloud_visitors" data-flag-title="使用批处理脚本高效管理 Hexo 博客：新建文章、本地预览与部署" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="前言">前言</h2>
+<p>在日常使用 Hexo 进行博客写作和管理时，我们常常需要重复执行一些命令：新建文章、生成和预览网站、部署到远程仓库等。为了提高效率，可以通过 <strong>批处理脚本（.bat）</strong> 来自动化这些操作。本文将分享我制作的三个实用脚本，并详细说明其功能和使用方法。</p>
+<span id="more"></span>
+<hr>
+<h2 id="一、新建文章脚本">一、新建文章脚本</h2>
+<h3 id="脚本功能">脚本功能</h3>
+<p>这个脚本用于快速在 <code>Hexo</code> 博客中创建新文章，并自动打开文章文件以便立即编辑。具体功能包括：</p>
+<ul>
+<li>自动切换到 <code>Hexo</code> 博客根目录</li>
+<li>提示输入文章标题</li>
+<li>调用 <code>hexo new</code> 创建新文章</li>
+<li>自动生成文件路径（空格自动转换为短横线）</li>
+<li>检查文件是否存在，若存在则自动打开，否则打开 <code>_posts</code> 文件夹以便手动查找</li>
+</ul>
+<h4 id="脚本示例">脚本示例</h4>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">chcp</span> <span class="number">65001</span> &gt; <span class="built_in">nul</span></span><br><span class="line"><span class="built_in">setlocal</span> enabledelayedexpansion</span><br><span class="line"></span><br><span class="line">:: 💡 设置 Hexo 博客根目录</span><br><span class="line"><span class="built_in">set</span> HEXO_DIR=D:\hespring.github.io\hexo-blog</span><br><span class="line"></span><br><span class="line">:: 切换到 Hexo 根目录</span><br><span class="line"><span class="built_in">cd</span> /d &quot;<span class="variable">%HEXO_DIR%</span>&quot;</span><br><span class="line"></span><br><span class="line">:: 输入标题</span><br><span class="line"><span class="built_in">set</span> /p <span class="built_in">title</span>=📥 请输入文章标题（将作为文件名）：</span><br><span class="line"></span><br><span class="line">:: 创建文章</span><br><span class="line"><span class="built_in">echo</span> 🚀 正在创建文章：<span class="variable">%title%</span></span><br><span class="line"><span class="keyword">call</span> hexo new &quot;<span class="variable">%title%</span>&quot;</span><br><span class="line"></span><br><span class="line">:: 生成文件名（空格转短横线）</span><br><span class="line"><span class="built_in">set</span> &quot;filename=%<span class="built_in">title</span>: =-%&quot;</span><br><span class="line"><span class="built_in">set</span> &quot;filepath=<span class="variable">%HEXO_DIR%</span>\source\_posts\<span class="variable">%filename%</span>.<span class="built_in">md</span>&quot;</span><br><span class="line"></span><br><span class="line">:: 检查并打开</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> &quot;<span class="variable">%filepath%</span>&quot; (</span><br><span class="line">    <span class="built_in">echo</span> 📂 正在打开：<span class="variable">%filepath%</span></span><br><span class="line">    <span class="built_in">start</span> &quot;&quot; &quot;<span class="variable">%filepath%</span>&quot;</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">    <span class="built_in">echo</span> ⚠️ 未找到文件：<span class="variable">%filepath%</span></span><br><span class="line">    <span class="built_in">echo</span> ▶ 可能文件名被 Hexo 转拼音或有特殊处理</span><br><span class="line">    <span class="built_in">echo</span> ▶ 请手动检查 source/_posts 文件夹</span><br><span class="line">    <span class="built_in">start</span> &quot;&quot; &quot;<span class="variable">%HEXO_DIR%</span>\source\_posts&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> ✅ 新建并打开完成。</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用方法">使用方法</h3>
+<ol>
+<li>将脚本保存为 <code>new_post.bat</code></li>
+<li>双击运行，输入文章标题</li>
+<li>脚本会自动创建文章并打开编辑器</li>
+</ol>
+<hr>
+<h2 id="二、本地预览网站脚本">二、本地预览网站脚本</h2>
+<h3 id="脚本功能-2">脚本功能</h3>
+<p>在撰写或修改博客时，常常需要本地生成并预览网站效果。该脚本实现：</p>
+<ul>
+<li>自动生成 Hexo 静态文件</li>
+<li>启动本地服务器（默认端口 4000）</li>
+<li>自动打开浏览器预览</li>
+</ul>
+<h4 id="脚本示例-2">脚本示例</h4>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">chcp</span> <span class="number">65001</span> &gt; <span class="built_in">nul</span></span><br><span class="line"><span class="built_in">echo</span> ==============================</span><br><span class="line"><span class="built_in">echo</span> 正在生成并本地预览 Hexo 博客...</span><br><span class="line"><span class="built_in">echo</span> ==============================</span><br><span class="line"></span><br><span class="line"><span class="keyword">call</span> hexo generate</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 启动本地服务器（端口: <span class="number">4000</span>）...</span><br><span class="line"><span class="built_in">start</span> http://localhost:<span class="number">4000</span></span><br><span class="line"><span class="built_in">start</span> <span class="built_in">cmd</span> /k &quot;hexo server -p <span class="number">4000</span>&quot;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> ==============================</span><br><span class="line"><span class="built_in">echo</span> 已打开浏览器预览窗口，关闭命令窗口即可停止服务。</span><br><span class="line"><span class="built_in">echo</span> ==============================</span><br></pre></td></tr></table></figure>
+<h3 id="使用方法-2">使用方法</h3>
+<ol>
+<li>保存为 <code>preview.bat</code></li>
+<li>双击运行，浏览器会自动打开本地博客</li>
+<li>关闭命令窗口即可停止本地服务器</li>
+</ol>
+<hr>
+<h2 id="三、部署网站脚本">三、部署网站脚本</h2>
+<h3 id="脚本功能-3">脚本功能</h3>
+<p>当博客内容修改完成后，需要部署到远程仓库。此脚本实现：</p>
+<ul>
+<li>清理旧生成文件</li>
+<li>重新生成静态文件</li>
+<li>调用 <code>hexo deploy</code> 上传到 GitHub Pages 或其他远程服务</li>
+</ul>
+<h4 id="脚本示例-3">脚本示例</h4>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">chcp</span> <span class="number">65001</span> &gt; <span class="built_in">nul</span></span><br><span class="line"><span class="built_in">echo</span> ==============================</span><br><span class="line"><span class="built_in">echo</span> 正在部署 Hexo 博客...</span><br><span class="line"><span class="built_in">echo</span> ==============================</span><br><span class="line"></span><br><span class="line"><span class="keyword">call</span> hexo clean</span><br><span class="line"><span class="keyword">call</span> hexo generate</span><br><span class="line"><span class="keyword">call</span> hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> ==============================</span><br><span class="line"><span class="built_in">echo</span> Hexo 部署完成</span><br><span class="line"><span class="built_in">echo</span> ==============================</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用方法-3">使用方法</h3>
+<ol>
+<li>保存为 <code>deploy.bat</code></li>
+<li>双击运行，脚本会自动完成部署</li>
+</ol>
+<hr>
+<h2 id="总结">总结</h2>
+<p>通过这三个批处理脚本，你可以：</p>
+<ol>
+<li>快速新建文章并立即编辑</li>
+<li>一键生成网站并本地预览</li>
+<li>自动部署博客到远程仓库</li>
+</ol>
+<p>这大大简化了 <code>Hexo</code> 博客的日常操作，提高了写作和管理效率。如果你也在使用 <code>Hexo</code>，强烈推荐尝试这些自动化脚本。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Hespring 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Hespring 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"><i class="fa-solid fa-wand-magic-sparkles"></i> 技术</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/09/10/%E9%83%A8%E7%BD%B2%E5%9C%A8GitHub%E4%B8%8A%E7%9A%84Hexo-NexT-%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%86%8C%E5%AE%9E%E7%8E%B0%E6%8C%87%E5%8D%97/" rel="prev" title="部署在GitHub上的Hexo + NexT 博客相册实现指南">
+                  <i class="fa fa-angle-left"></i> 部署在GitHub上的Hexo + NexT 博客相册实现指南
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Hespring</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">43k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:24</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
